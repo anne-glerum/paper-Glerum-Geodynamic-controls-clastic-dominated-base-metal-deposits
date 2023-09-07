@@ -19,10 +19,10 @@ rc("xtick", labelsize= 12)
 rc("font", size=12)
 rc("axes", titlesize=15, labelsize=12)
 #rc('axes', linewidth=3)
-rc("legend", fontsize=6)
+rc("legend", fontsize=8)
 
 # Path to models
-base = r"/Users/acglerum/Documents/Postdoc/SB_CRYSTALS/HLRN/HLRN/FastScapeASPECT/"
+base = "./"
 
 # Model names
 models = [
@@ -143,16 +143,16 @@ for p in paths:
       interpolated_host_area = np.interp(mean_t, t*0.005/1000.0, host_area)
       average_source_area_1 += interpolated_source_area
       average_host_area_1 += interpolated_host_area
-    elif 'vel10' in p:
-      interpolated_source_area = np.interp(mean_t, t*0.01/1000.0, source_area)
-      interpolated_host_area = np.interp(mean_t, t*0.01/1000.0, host_area)
-      average_source_area_2 += interpolated_source_area
-      average_host_area_2 += interpolated_host_area
     elif 'vel20' in p:
       interpolated_source_area = np.interp(mean_t, t*0.02/1000.0, source_area)
       interpolated_host_area = np.interp(mean_t, t*0.02/1000.0, host_area)
       average_source_area_3 += interpolated_source_area
       average_host_area_3 += interpolated_host_area
+    else:
+      interpolated_source_area = np.interp(mean_t, t*0.01/1000.0, source_area)
+      interpolated_host_area = np.interp(mean_t, t*0.01/1000.0, host_area)
+      average_source_area_2 += interpolated_source_area
+      average_host_area_2 += interpolated_host_area
 
     # Plot the raw area in km2 in 
     # categorical batlow colors.
@@ -167,14 +167,14 @@ print ("Max source area:", max_source, "m2")
 print ("Average max source area:", average_max_source/9, "m2")
 
 # Plot the average source area over time (divide by nine to get the average)
-ax.plot(mean_t/1e6,average_source_area_1/9e6,color=colors[0],linestyle=linestyles[0],label=None,marker=markers[0],markevery=dmark,fillstyle='none')
-ax.plot(mean_t/1e6,average_source_area_2/9e6,color=colors[1],linestyle=linestyles[1],label=None,marker=markers[1],markevery=dmark,fillstyle='none')
-ax.plot(mean_t/1e6,average_source_area_3/9e6,color=colors[2],linestyle=linestyles[2],label=None,marker=markers[2],markevery=dmark,fillstyle='none')
+ax.plot(mean_t,average_source_area_1/9e6,color=colors[0],linestyle=linestyles[0],label=None,marker=markers[0],markevery=dmark,fillstyle='none')
+ax.plot(mean_t,average_source_area_2/9e6,color=colors[1],linestyle=linestyles[1],label=None,marker=markers[1],markevery=dmark,fillstyle='none')
+ax.plot(mean_t,average_source_area_3/9e6,color=colors[2],linestyle=linestyles[2],label=None,marker=markers[2],markevery=dmark,fillstyle='none')
 
 # Plot the average host area over time (divide by nine to get the average)
-ax2.plot(mean_t/1e6,average_host_area_1/9e6,color=colors[3],linestyle=linestyles[3],label=labels[3],marker=markers[3],markevery=dmark,fillstyle='none')
-ax2.plot(mean_t/1e6,average_host_area_2/9e6,color=colors[4],linestyle=linestyles[4],label=labels[4],marker=markers[4],markevery=dmark,fillstyle='none')
-ax2.plot(mean_t/1e6,average_host_area_3/9e6,color=colors[5],linestyle=linestyles[5],label=labels[5],marker=markers[5],markevery=dmark,fillstyle='none')
+ax2.plot(mean_t,average_host_area_1/9e6,color=colors[3],linestyle=linestyles[3],label=labels[3],marker=markers[3],markevery=dmark,fillstyle='none')
+ax2.plot(mean_t,average_host_area_2/9e6,color=colors[4],linestyle=linestyles[4],label=labels[4],marker=markers[4],markevery=dmark,fillstyle='none')
+ax2.plot(mean_t,average_host_area_3/9e6,color=colors[5],linestyle=linestyles[5],label=labels[5],marker=markers[5],markevery=dmark,fillstyle='none')
 
 # add in time range onset of oceanic spreading
 #plt.axvspan(22.5, 25.25, color='lightgrey', alpha=0.5, lw=0)
@@ -190,11 +190,11 @@ ax.grid(axis='x',color='0.95')
 ax.grid(axis='y',color='0.95')
 
 # Ranges of the axes
-ax.set_xlim(-0.25,25.25) # My
-ax.set_ylim(-0.4,40.4) # km2
+ax.set_xlim(-2.5,252.5) # km
+ax.set_ylim(-1.0,101.) # km2
 ax.ticklabel_format(axis='y',useOffset=False)
-ax.set_xticks(np.arange(0,30,5))
-#ax.yticks([0,50,100,150,200,210])
+ax.set_xticks(np.arange(0,300,50))
+ax.set_yticks([0,25,50,75,100])
 
 # Second subplot
 # Transparent background
@@ -204,13 +204,28 @@ ax2.legend(loc='upper left',ncol=1, columnspacing = 1.5)
 ax2.yaxis.tick_right()
 ax2.yaxis.set_label_position('right') 
 ax2.set_ylim(-3.0,303.0)
-#ax2.set_yticks([0,250,500,750,1000])
+ax2.set_yticks([0,75,150,225,300])
 
-plt.tight_layout()
-fig.tight_layout()
+#plt.tight_layout()
+#fig.tight_layout()
 
 # Name the png according to the plotted field
 # Change as needed
 field='average_source_host_area_'
 plt.savefig(output_name + '_CERI_' + str(field) + '.png',dpi=300,bbox_inches='tight')    
-print ("Output in: ", output_name + '_CERI_' + str(field) + '.png')
+print ("Output in: ", output_name + '_CERI_' + str(field) + '.svg')
+
+# Output svg
+plt.savefig(output_name + '_CERI_' + str(field) + '.svg',dpi=300,bbox_inches='tight',format='svg')    
+print ("Output in: ", output_name + '_CERI_' + str(field) + '.svg')
+
+# Also output an svg without y tick labels
+field='average_source_host_area_nolabel'
+#ax.set_ylabel(None)
+ax.set_yticklabels(["200","200","200","200","200"])
+#ax2.set_ylabel(None)
+ax2.set_yticklabels(["1000","1000","1000","1000","1000"])
+#plt.tight_layout()
+#fig.tight_layout()
+plt.savefig(output_name + '_CERI_' + str(field) + '.svg',dpi=300,bbox_inches='tight',format='svg')    
+print ("Output in: ", output_name + '_CERI_' + str(field) + '.svg')

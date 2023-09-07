@@ -19,51 +19,60 @@ rc("xtick", labelsize= 12)
 rc("font", size=12)
 rc("axes", titlesize=15, labelsize=12)
 #rc('axes', linewidth=3)
-rc("legend", fontsize=6)
+rc("legend", fontsize=8)
 
 # Path to models
-base = r"/Users/acglerum/Documents/Postdoc/SB_CRYSTALS/HLRN/HLRN/FastScapeASPECT/"
+base = "./"
 
 # Model names
 models = [
+'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed1236549_rain0.0001_Ksilt210_Ksand70_Kf1e-06_SL-200',
+'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2323432_rain0.0001_Ksilt210_Ksand70_Kf1e-06_SL-200',
+'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2349871_rain0.0001_Ksilt210_Ksand70_Kf1e-06_SL-200',
+'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2928465_rain0.0001_Ksilt210_Ksand70_Kf1e-06_SL-200',
+'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed3458045_rain0.0001_Ksilt210_Ksand70_Kf1e-06_SL-200',
+'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed5346276_rain0.0001_Ksilt210_Ksand70_Kf1e-06_SL-200',
+'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed7646354_rain0.0001_Ksilt210_Ksand70_Kf1e-06_SL-200',
+'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed9023857_rain0.0001_Ksilt210_Ksand70_Kf1e-06_SL-200',
+'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed9872345_rain0.0001_Ksilt210_Ksand70_Kf1e-06_SL-200',
 '5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed1236549_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
-'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2323432_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200_vel10',
+'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2323432_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
 '5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2349871_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
 '5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2928465_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
-'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed3458045_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200_vel10',
-'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed5346276_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200_vel10',
-'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed7646354_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200_vel10',
-'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed9023857_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200_vel10',
+'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed3458045_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
+'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed5346276_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
+'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed7646354_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
+'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed9023857_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
 '5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed9872345_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
-'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed1236549_rain0.0001_Ksilt210_Ksand70_Kf2e-05_SL-200',
-'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2323432_rain0.0001_Ksilt210_Ksand70_Kf2e-05_SL-200',
-'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2349871_rain0.0001_Ksilt210_Ksand70_Kf2e-05_SL-200',
-'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2928465_rain0.0001_Ksilt210_Ksand70_Kf2e-05_SL-200',
-'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed3458045_rain0.0001_Ksilt210_Ksand70_Kf2e-05_SL-200',
-'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed5346276_rain0.0001_Ksilt210_Ksand70_Kf2e-05_SL-200',
-'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed7646354_rain0.0001_Ksilt210_Ksand70_Kf2e-05_SL-200',
-'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed9023857_rain0.0001_Ksilt210_Ksand70_Kf2e-05_SL-200',
-'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed9872345_rain0.0001_Ksilt210_Ksand70_Kf2e-05_SL-200',
-'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed1236549_rain0.0001_Ksilt210_Ksand70_Kf4e-05_SL-200',
+#'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed1236549_rain0.0001_Ksilt210_Ksand70_Kf2e-05_SL-200',
+#'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2323432_rain0.0001_Ksilt210_Ksand70_Kf2e-05_SL-200',
+#'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2349871_rain0.0001_Ksilt210_Ksand70_Kf2e-05_SL-200',
+#'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2928465_rain0.0001_Ksilt210_Ksand70_Kf2e-05_SL-200',
+#'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed3458045_rain0.0001_Ksilt210_Ksand70_Kf2e-05_SL-200',
+#'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed5346276_rain0.0001_Ksilt210_Ksand70_Kf2e-05_SL-200',
+#'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed7646354_rain0.0001_Ksilt210_Ksand70_Kf2e-05_SL-200',
+#'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed9023857_rain0.0001_Ksilt210_Ksand70_Kf2e-05_SL-200',
+#'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed9872345_rain0.0001_Ksilt210_Ksand70_Kf2e-05_SL-200',
+'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed1236549_rain0.0001_Ksilt210_Ksand70_Kf4e-05_SL-200_vel10',
 '5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2323432_rain0.0001_Ksilt210_Ksand70_Kf4e-05_SL-200_vel10',
-'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2349871_rain0.0001_Ksilt210_Ksand70_Kf4e-05_SL-200',
-'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2928465_rain0.0001_Ksilt210_Ksand70_Kf4e-05_SL-200',
+'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2349871_rain0.0001_Ksilt210_Ksand70_Kf4e-05_SL-200_vel10',
+'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2928465_rain0.0001_Ksilt210_Ksand70_Kf4e-05_SL-200_vel10',
 '5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed3458045_rain0.0001_Ksilt210_Ksand70_Kf4e-05_SL-200_vel10',
 '5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed5346276_rain0.0001_Ksilt210_Ksand70_Kf4e-05_SL-200_vel10',
 '5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed7646354_rain0.0001_Ksilt210_Ksand70_Kf4e-05_SL-200_vel10',
 '5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed9023857_rain0.0001_Ksilt210_Ksand70_Kf4e-05_SL-200_vel10',
-'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed9872345_rain0.0001_Ksilt210_Ksand70_Kf4e-05_SL-200',
+'5p_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed9872345_rain0.0001_Ksilt210_Ksand70_Kf4e-05_SL-200_vel10',
          ]
 
 output_name = '5p_fixed_rain0.0001_Km210_Km70_Kfvar_'
 
 labels = [
-          'NA-av. River incision rate $K_f$ = 1e-5 m$^{1-2m}$/yr',
-          'NA-av. River incision rate $K_f$ = 2e-5 m$^{1-2m}$/yr',
-          'NA-av. River incision rate $K_f$ = 4e-5 m$^{1-2m}$/yr',
-          'NA-av. River incision rate $K_f$ = 1e-5 m$^{1-2m}$/yr',
-          'NA-av. River incision rate $K_f$ = 2e-5 m$^{1-2m}$/yr',
-          'NA-av. River incision rate $K_f$ = 4e-5 m$^{1-2m}$/yr',
+          'NA-av. $K_f$ = 1e-6 m$^{1-2m}$/yr',
+          'NA-av. $K_f$ = 1e-5 m$^{1-2m}$/yr',
+          'NA-av. $K_f$ = 4e-5 m$^{1-2m}$/yr',
+          'NA-av. $K_f$ = 1e-6 m$^{1-2m}$/yr',
+          'NA-av. $K_f$ = 1e-5 m$^{1-2m}$/yr',
+          'NA-av. $K_f$ = 4e-5 m$^{1-2m}$/yr',
          ]
 
 # Batlow
@@ -140,10 +149,10 @@ for p in paths:
     interpolated_source_area = np.interp(mean_t, t, source_area)
     interpolated_host_area = np.interp(mean_t, t, host_area)
 
-    if 'Kf1e-05' in p:
+    if 'Kf1e-06' in p:
       average_source_area_1 += interpolated_source_area
       average_host_area_1 += interpolated_host_area
-    elif 'Kf2e-05' in p:
+    elif 'Kf1e-05' in p:
       average_source_area_2 += interpolated_source_area
       average_host_area_2 += interpolated_host_area
     elif 'Kf4e-05' in p:
@@ -187,10 +196,10 @@ ax.grid(axis='y',color='0.95')
 
 # Ranges of the axes
 ax.set_xlim(-0.25,25.25) # My
-ax.set_ylim(-0.4,40.4) # km2
+ax.set_ylim(-1.0,101.0) # km2
 ax.ticklabel_format(axis='y',useOffset=False)
 ax.set_xticks(np.arange(0,30,5))
-#ax.yticks([0,50,100,150,200,210])
+ax.set_yticks([0,25,50,75,100])
 
 # Second subplot
 # Transparent background
@@ -200,13 +209,28 @@ ax2.legend(loc='upper left',ncol=1, columnspacing = 1.5)
 ax2.yaxis.tick_right()
 ax2.yaxis.set_label_position('right') 
 ax2.set_ylim(-3.0,303.0)
-#ax2.set_yticks([0,250,500,750,1000])
+ax2.set_yticks([0,75,150,225,300])
 
-plt.tight_layout()
-fig.tight_layout()
+#plt.tight_layout()
+#fig.tight_layout()
 
 # Name the png according to the plotted field
 # Change as needed
 field='average_source_host_area_'
 plt.savefig(output_name + '_CERI_' + str(field) + '.png',dpi=300,bbox_inches='tight')    
 print ("Output in: ", output_name + '_CERI_' + str(field) + '.png')
+
+# Output svg
+plt.savefig(output_name + '_CERI_' + str(field) + '.svg',dpi=300,bbox_inches='tight',format='svg')    
+print ("Output in: ", output_name + '_CERI_' + str(field) + '.svg')
+
+# Also output an svg without y tick labels
+field='average_source_host_area_nolabel'
+#ax.set_ylabel(None)
+ax.set_yticklabels(["200","200","200","200","200"])
+#ax2.set_ylabel(None)
+ax2.set_yticklabels(["1000","1000","1000","1000","1000"])
+#plt.tight_layout()
+#fig.tight_layout()
+plt.savefig(output_name + '_CERI_' + str(field) + '.svg',dpi=300,bbox_inches='tight',format='svg')    
+print ("Output in: ", output_name + '_CERI_' + str(field) + '.svg')

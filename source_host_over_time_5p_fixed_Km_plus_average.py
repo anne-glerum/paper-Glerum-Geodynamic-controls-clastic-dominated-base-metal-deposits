@@ -19,10 +19,10 @@ rc("xtick", labelsize= 12)
 rc("font", size=12)
 rc("axes", titlesize=15, labelsize=12)
 #rc('axes', linewidth=3)
-rc("legend", fontsize=6)
+rc("legend", fontsize=8)
 
 # Path to models
-base = r"/Users/acglerum/Documents/Postdoc/SB_CRYSTALS/HLRN/HLRN/FastScapeASPECT/"
+base = "./"
 
 # Model names
 models = [
@@ -58,12 +58,12 @@ models = [
 output_name = '5p_fixed_rain0.0001_Kmvar_Kmvar_Kf1e-5_'
 
 labels = [
-          'NA-av. $K_{M\; \mathrm{sand}}$ = 40, $K_{M\;\mathrm{silt}}$ = 120 $\mathrm{m^2}$/yr',
-          'NA-av. $K_{M\; \mathrm{sand}}$ = 70, $K_{M\;\mathrm{silt}}$ = 210 $\mathrm{m^2}$/yr',
-          'NA-av. $K_{M\; \mathrm{sand}}$ = 100, $K_{M\;\mathrm{silt}}$ = 300 $\mathrm{m^2}$/yr',
           'NA-av. $K_{M\; \mathrm{sand}}$ = 40,\n     $K_{M\;\mathrm{silt}}$ = 120 $\mathrm{m^2}$/yr',
           'NA-av. $K_{M\; \mathrm{sand}}$ = 70,\n     $K_{M\;\mathrm{silt}}$ = 210 $\mathrm{m^2}$/yr',
           'NA-av. $K_{M\; \mathrm{sand}}$ = 100,\n     $K_{M\;\mathrm{silt}}$ = 300 $\mathrm{m^2}$/yr',
+          'NA-av. $K_{M\; \mathrm{sand}}$ = 40, $K_{M\;\mathrm{silt}}$ = 120 $\mathrm{m^2}$/yr',
+          'NA-av. $K_{M\; \mathrm{sand}}$ = 70, $K_{M\;\mathrm{silt}}$ = 210 $\mathrm{m^2}$/yr',
+          'NA-av. $K_{M\; \mathrm{sand}}$ = 100, $K_{M\;\mathrm{silt}}$ = 300 $\mathrm{m^2}$/yr',
          ]
 
 # Batlow
@@ -190,7 +190,7 @@ ax.set_xlim(-0.25,25.25) # My
 ax.set_ylim(-0.4,40.4) # km2
 ax.ticklabel_format(axis='y',useOffset=False)
 ax.set_xticks(np.arange(0,30,5))
-#ax.yticks([0,50,100,150,200,210])
+ax.set_yticks([0,10,20,30,40])
 
 # Second subplot
 # Transparent background
@@ -200,13 +200,28 @@ ax2.legend(loc='upper left',ncol=1, columnspacing = 1.5)
 ax2.yaxis.tick_right()
 ax2.yaxis.set_label_position('right') 
 ax2.set_ylim(-3.0,303.0)
-#ax2.set_yticks([0,250,500,750,1000])
+ax2.set_yticks([0,75,150,225,300])
 
-plt.tight_layout()
-fig.tight_layout()
+#plt.tight_layout()
+#fig.tight_layout()
 
 # Name the png according to the plotted field
 # Change as needed
 field='average_source_host_area_'
 plt.savefig(output_name + '_CERI_' + str(field) + '.png',dpi=300,bbox_inches='tight')    
 print ("Output in: ", output_name + '_CERI_' + str(field) + '.png')
+
+# Output svg
+plt.savefig(output_name + '_CERI_' + str(field) + '.svg',dpi=300,bbox_inches='tight',format='svg')    
+print ("Output in: ", output_name + '_CERI_' + str(field) + '.svg')
+
+# Also output an svg without y tick labels
+field='average_source_host_area_nolabel'
+#ax.set_ylabel(None)
+ax.set_yticklabels(["200","200","200","200","200"])
+#ax2.set_ylabel(None)
+ax2.set_yticklabels(["1000","1000","1000","1000","1000"])
+#plt.tight_layout()
+#fig.tight_layout()
+plt.savefig(output_name + '_CERI_' + str(field) + '.svg',dpi=300,bbox_inches='tight',format='svg')    
+print ("Output in: ", output_name + '_CERI_' + str(field) + '.svg')

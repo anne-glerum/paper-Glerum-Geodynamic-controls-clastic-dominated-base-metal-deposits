@@ -22,7 +22,7 @@ rc("axes", titlesize=15, labelsize=12)
 rc("legend", fontsize=8)
 
 # Path to models
-base = r"/Users/acglerum/Documents/Postdoc/SB_CRYSTALS/HLRN/HLRN/FastScapeASPECT/"
+base = "./"
 
 # Model names
 models = [
@@ -58,12 +58,12 @@ models = [
 output_name = '5p_fixed_rainvar_Km210_Km70_Kf1e-5_'
 
 labels = [
-          'NA-av. marine sed. rate = 1e-4 m/yr',
-          'NA-av. marine sed. rate = 2e-4 m/yr',
-          'NA-av. marine sed. rate = 4e-4 m/yr',
-          'NA-av. marine sed. rate = 1e-4 m/yr',
-          'NA-av. marine sed. rate = 2e-4 m/yr',
-          'NA-av. marine sed. rate = 4e-4 m/yr',
+          'NA-av. $R_M$ = 1e-4 m/yr',
+          'NA-av. $R_M$ = 2e-4 m/yr',
+          'NA-av. $R_M$ = 4e-4 m/yr',
+          'NA-av. $R_M$ = 1e-4 m/yr',
+          'NA-av. $R_M$ = 2e-4 m/yr',
+          'NA-av. $R_M$ = 4e-4 m/yr',
          ]
 
 # Batlow
@@ -190,7 +190,7 @@ ax.set_xlim(-0.25,25.25) # My
 ax.set_ylim(-2,202) # km2
 ax.ticklabel_format(axis='y',useOffset=False)
 ax.set_xticks(np.arange(0,30,5))
-#ax.yticks([0,50,100,150,200,210])
+ax.set_yticks([0,50,100,150,200])
 
 # Second subplot
 # Transparent background
@@ -202,11 +202,26 @@ ax2.yaxis.set_label_position('right')
 ax2.set_ylim(-10.0,1010.0)
 ax2.set_yticks([0,250,500,750,1000])
 
-plt.tight_layout()
-fig.tight_layout()
+#plt.tight_layout()
+#fig.tight_layout()
 
 # Name the png according to the plotted field
 # Change as needed
-field='average_source_host_area_'
+field='average_source_host_area'
 plt.savefig(output_name + '_CERI_' + str(field) + '.png',dpi=300,bbox_inches='tight')    
 print ("Output in: ", output_name + '_CERI_' + str(field) + '.png')
+
+# Output svg
+plt.savefig(output_name + '_CERI_' + str(field) + '.svg',dpi=300,bbox_inches='tight',format='svg')    
+print ("Output in: ", output_name + '_CERI_' + str(field) + '.svg')
+
+# Also output an svg without y tick labels
+field='average_source_host_area_nolabel'
+#ax.set_ylabel(None)
+ax.set_yticklabels(["200","200","200","200","200"])
+#ax2.set_ylabel(None)
+ax2.set_yticklabels(["1000","1000","1000","1000","1000"])
+#plt.tight_layout()
+#fig.tight_layout()
+plt.savefig(output_name + '_CERI_' + str(field) + '.svg',dpi=300,bbox_inches='tight',format='svg')    
+print ("Output in: ", output_name + '_CERI_' + str(field) + '.svg')
