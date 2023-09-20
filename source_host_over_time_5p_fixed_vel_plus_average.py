@@ -20,6 +20,9 @@ rc("font", size=12)
 rc("axes", titlesize=15, labelsize=12)
 #rc('axes', linewidth=3)
 rc("legend", fontsize=8)
+# make lables editable in svg in inkscape
+plt.rcParams["text.usetex"] = False
+plt.rcParams["svg.fonttype"] = "none"
 
 # Path to models
 base = "./"
@@ -58,12 +61,12 @@ models = [
 output_name = '5p_fixed_rain0.0001_Km210_Km70_Kf1e-5_velvar_'
 
 labels = [
-          'NA-av. $v_{x}$ = 5 cm/yr',
-          'NA-av. $v_{x}$ = 10 cm/yr',
-          'NA-av. $v_{x}$ = 20 cm/yr',
-          'NA-av. $v_{x}$ = 5 cm/yr',
-          'NA-av. $v_{x}$ = 10 cm/yr',
-          'NA-av. $v_{x}$ = 20 cm/yr',
+          'NA-av. $v_{x}$ = 5 mm/yr',
+          'NA-av. $v_{x}$ = 10 mm/yr',
+          'NA-av. $v_{x}$ = 20 mm/yr',
+          'NA-av. $v_{x}$ = 5 mm/yr',
+          'NA-av. $v_{x}$ = 10 mm/yr',
+          'NA-av. $v_{x}$ = 20 mm/yr',
          ]
 
 # Batlow
@@ -130,7 +133,7 @@ for p in paths:
     # The correct columns are selected with usecols.
     # When no visu output file name is given, the respective line will have a lot of
     # placeholder spaces. We need to remove them before genfromtxt can deal with the
-    # statistics file. 
+    # statistics file.
     with open(p) as f:
         clean_lines = (re.sub('\s+',' ',line) for line in f)
         t,source_area,host_area,fault_area = np.genfromtxt(clean_lines, comments='#', usecols=(1,62,63,64), delimiter=' ', unpack=True)
@@ -191,10 +194,10 @@ ax.grid(axis='y',color='0.95')
 
 # Ranges of the axes
 ax.set_xlim(-2.5,252.5) # km
-ax.set_ylim(-1.0,101.) # km2
+ax.set_ylim(-1.2,121.2) # km2
 ax.ticklabel_format(axis='y',useOffset=False)
 ax.set_xticks(np.arange(0,300,50))
-ax.set_yticks([0,25,50,75,100])
+ax.set_yticks([0,30,60,90,120])
 
 # Second subplot
 # Transparent background
@@ -202,9 +205,9 @@ ax2.patch.set_facecolor('None')
 ax2.set_ylabel("Host area [km$\mathbf{^2}$]", weight="bold", color=color_host)
 ax2.legend(loc='upper left',ncol=1, columnspacing = 1.5)
 ax2.yaxis.tick_right()
-ax2.yaxis.set_label_position('right') 
-ax2.set_ylim(-3.0,303.0)
-ax2.set_yticks([0,75,150,225,300])
+ax2.yaxis.set_label_position('right')
+ax2.set_ylim(-3.6,363.6)
+ax2.set_yticks([0,90,180,270,360])
 
 #plt.tight_layout()
 #fig.tight_layout()
@@ -212,11 +215,11 @@ ax2.set_yticks([0,75,150,225,300])
 # Name the png according to the plotted field
 # Change as needed
 field='average_source_host_area_'
-plt.savefig(output_name + '_CERI_' + str(field) + '.png',dpi=300,bbox_inches='tight')    
-print ("Output in: ", output_name + '_CERI_' + str(field) + '.svg')
+plt.savefig(output_name + '_CERI_' + str(field) + '.png',dpi=300,bbox_inches='tight')
+print ("Output in: ", output_name + '_CERI_' + str(field) + '.png')
 
 # Output svg
-plt.savefig(output_name + '_CERI_' + str(field) + '.svg',dpi=300,bbox_inches='tight',format='svg')    
+plt.savefig(output_name + '_CERI_' + str(field) + '.svg',dpi=300,bbox_inches='tight',format='svg')
 print ("Output in: ", output_name + '_CERI_' + str(field) + '.svg')
 
 # Also output an svg without y tick labels
@@ -227,5 +230,5 @@ ax.set_yticklabels(["200","200","200","200","200"])
 ax2.set_yticklabels(["1000","1000","1000","1000","1000"])
 #plt.tight_layout()
 #fig.tight_layout()
-plt.savefig(output_name + '_CERI_' + str(field) + '.svg',dpi=300,bbox_inches='tight',format='svg')    
+plt.savefig(output_name + '_CERI_' + str(field) + '.svg',dpi=300,bbox_inches='tight',format='svg')
 print ("Output in: ", output_name + '_CERI_' + str(field) + '.svg')

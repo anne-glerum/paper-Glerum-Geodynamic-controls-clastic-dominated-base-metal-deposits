@@ -154,8 +154,27 @@ print ("Average max source area:", average_max_source/9, "m2")
 # Plot the average source area over time (divide by nine to get the average)
 plt.plot(mean_t/1e6,average_source_area/9e6,color=colors[counter],linestyle='solid',label=labels[counter],marker=markers[counter],markevery=dmark,fillstyle='none',linewidth=3)
 
+# add in time range onset of stable spreading
+#plt.axvspan(17.5, 25.25, color='lightgrey', alpha=0.5, lw=0)
 # add in time range onset of oceanic spreading
-plt.axvspan(22.5, 25.25, color='lightgrey', alpha=0.5, lw=0)
+plt.axvspan(20.0, 25.25, color='lightgrey', alpha=0.5, lw=0)
+
+#plt.axvspan(17.5, 25.25, color=color6, alpha=0.8, lw=0)
+#plt.axvspan(20.0, 25.25, color=color5, alpha=0.8, lw=0)
+#plt.axvspan(20.0, 25.25, color=color3, alpha=0.8, lw=0)
+#plt.axvspan(20.5, 25.25, color=color8, alpha=0.8, lw=0)
+#plt.axvspan(21.0, 25.25, color=color4, alpha=0.8, lw=0)
+#plt.axvspan(21.0, 25.25, color=color2, alpha=0.8, lw=0)
+#plt.axvspan(21.0, 25.25, color=color1, alpha=0.8, lw=0)
+#plt.axvspan(21.5, 25.25, color=color9, alpha=0.8, lw=0)
+##plt.vlines(17.5, -0.4, 1.7, color=color6, lw=1, linestyle='dashed')
+##plt.vlines(20.0, -0.4, 26., color=color3, lw=1, linestyle='dashed')
+##plt.vlines(20.0, -0.4, 18., color=color5, lw=1, linestyle='dashed')
+##plt.vlines(20.5, -0.4, 31., color=color8, lw=1, linestyle='dashed')
+##plt.vlines(21.0, -0.4, 30.5, color=color4, lw=1, linestyle='dashed')
+##plt.vlines(21.0, -0.4, 26., color=color2, lw=1, linestyle='dashed')
+##plt.vlines(21.0, -0.4, 19., color=color1, lw=1, linestyle='dashed')
+##plt.vlines(21.5, -0.4, 33., color=color9, lw=1, linestyle='dashed')
 
 # Labelling of plot
 plt.xlabel("Time [My]",weight="bold")
