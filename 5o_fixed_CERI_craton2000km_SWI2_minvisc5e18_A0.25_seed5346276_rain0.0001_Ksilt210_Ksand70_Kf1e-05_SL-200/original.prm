@@ -1,0 +1,443 @@
+set Additional shared libraries            = /home/bbpanneg/software/aspect/shared_libs/build_release__FastScapeASPECT/libinitial_strain_rift.so
+
+set Resume computation                     = auto
+
+set Dimension                              = 2
+set End time                               = 25e6
+set Use years in output instead of seconds = true
+set CFL number                             = 1
+set Maximum time step			   = 3.5e3
+set Maximum first time step                = 2e2
+set Maximum relative increase in time step = 100
+
+set Adiabatic surface temperature          = 1576.
+set Pressure normalization                 = surface
+set Output directory = /scratch/usr/bbpanneg/runs/FastScapeASPECT/5o_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed5346276_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200
+
+set Nonlinear solver scheme                = single Advection, iterated Stokes
+set Max nonlinear iterations               = 100
+set Nonlinear solver tolerance             = 1e-6
+set Max nonlinear iterations in pre-refinement      = 0
+
+# Solver parameters
+subsection Solver parameters
+  subsection Stokes solver parameters
+    set Number of cheap Stokes solver steps = 1000
+    set Linear solver tolerance             = 1e-7
+    set GMRES solver restart length         = 50
+    set Use full A block as preconditioner  = true
+  end
+  subsection Newton solver parameters
+    set Max Newton line search iterations        = 5
+    set Max pre-Newton nonlinear iterations      = 10
+    set Maximum linear Stokes solver tolerance   = 1e-2
+    set Nonlinear Newton solver switch tolerance = 7e-6
+    set SPD safety factor                        = 0.9
+    set Stabilization preconditioner             = SPD
+    set Stabilization velocity block             = SPD
+    set Use Newton failsafe                      = false
+    set Use Newton residual scaling method       = false
+    set Use Eisenstat Walker method for Picard iterations = true
+  end
+end
+
+subsection Discretization
+  subsection Stabilization parameters
+    #  T, plastic_strain, viscous_strain, sediment_age, deposition_depth, sediment, upper, lower, mantle_L, ratio_marine_continental_sediment, silt_fraction
+#    set cR = 0.11, 0.11, 0.11, 0.11, 0.11, 0.2, 0.2, 0.11, 0.11, 0.2, 0.2
+  end
+end
+
+subsection Geometry model
+  set Model name = box
+
+  subsection Box
+    set X extent = 700e3
+    set Y extent = 300e3
+    set X repetitions = 70
+    set Y repetitions = 30
+  end
+
+  subsection Initial topography model
+    set Model name = zero topography #ascii data
+  subsection Ascii data model
+    set Data directory = /home/bbpanneg/runs/runs__FastScapeASPECT/5a/
+    # Run without driving forces to get better estimate
+    set Data file name = 4a_initial_topo_2.txt 
+  end
+  end
+end
+    
+# Take the minimum of the continental geotherm
+# and the adiabat with 'Adiabatic surface temperature'
+subsection Initial temperature model
+  set List of model names = adiabatic, lithosphere with rift
+  set List of model operators = add, replace if valid
+  subsection Lithosphere with rift
+    set LAB isotherm temperature = 1623.
+    set Surface temperature = 293.
+    # Whether or not to prescribe the LAB depth up to a
+    # certain depth (in area below LAB)
+    # or use adiabat everywhere
+    set Use temperature compensation depth = true
+    set Temperature compensation depth = 120e3
+  end
+  subsection Adiabatic
+    # A reference profile of the compositional fields
+    # where x represents depth
+    subsection Function
+    #  plastic_strain, viscous_strain, sediment_age, deposition_depth, sediment, upper, lower, mantle_L, ratio_marine_continental_sediment, silt_fraction
+       set Function expression           = 0; \
+                                           0; \
+                                           0; \
+                                           0; \
+					   0; \
+                                           if(x<25e3,1,0); \
+                                           if(x>=25e3&x<45.0e3,1,0); \
+                                           if(x>=45.0e3&x<120e3,1,0); \
+                                           0; \
+                                           0
+    end
+    set Age top boundary layer        = 0
+    set Age bottom boundary layer     = 0
+  end
+end
+
+subsection Compositional fields
+  set Number of fields = 10
+  # attention: _Plugin_InitialCompositionRift requires a field called strain to seed in the initial noise
+  set Names of fields = plastic_strain, viscous_strain, sediment_age, deposition_depth, sediment, upper, lower, mantle_L, ratio_marine_continental_sediment, silt_fraction
+end 
+
+subsection Initial composition model
+  set List of model names = lithosphere with rift, rift, function
+  subsection Lithosphere with rift
+    set Blend polygons and rifts                       = true
+    set Standard deviation of Gaussian rift geometry   = 60e3
+    # UC 5 km thicker, ML 5 km thinner
+    set Amplitude of Gaussian rift geometry            = -0.2, 0, 0.0666
+    # LAB at 120 km
+    set Rift axis line segments                        = 350e3  
+    # Total crust 45 km
+    set Layer thicknesses                              = 25e3, 20e3, 75e3
+   
+    # Polygon LAB at 200 km
+    set Lithospheric polygon layer thicknesses         = 20e3, 21.5e3 , 157.5e3
+    set Lithospheric polygons                          = 2000e3 > 3000e3
+    set Half width of polygon smoothing                = 10e3 
+  end
+  
+  # Inherited noise 
+  subsection Rift
+    set Standard deviation of Gaussian noise amplitude distribution 	= 200e3    
+    set Maximum amplitude of Gaussian noise amplitude distribution      = 0.250000
+    set Random number generator seed                                    = 5346276.000000
+    set Depth around which Gaussian noise is smoothed out               = 50e3      
+    set Halfwidth with which Gaussian noise is smoothed out in depth    = 10e3         
+    set Grid intervals for noise X or radius                            = 2240
+    set Grid intervals for noise Y or longitude                         = 960
+
+    set Rift axis line segments                                         = 350e3
+  end
+  
+  subsection Function
+    set Variable names = x,y
+    set Function expression           = 0; \
+                                        0; \
+                                        0; \
+					0; \
+					0; \
+					0; \
+					0; \
+					0; \
+					0; \
+					0
+  end
+end
+
+subsection Boundary composition model
+  set List of model names = function, fastscape
+  set Fixed composition boundary indicators = bottom, top
+  subsection Function
+    set Variable names      = x,y,t
+    set Function constants  = h=300e3,My=1e-6, SL=0
+    # Names of fields = plastic_strain, viscous_strain, sediment_age, deposition_depth, sediment, upper, lower, mantle_L, ratio, silt_fraction
+    set Function expression = 0; \
+                              0; \
+                              if(y>h/2 && t>0,t*My,0); \ 
+                              if(y>h/2 && t>0,h+SL-y,0); \ 
+                              if(y>h/2 && t>0,1,0); \ 
+                              if(y>h/2 && t==0,1,0); \
+                              0; \
+                              0; \
+                              0; \
+                              0
+  end
+end
+
+subsection Boundary temperature model
+  set List of model names = initial temperature, box
+  set List of model operators = add, minimum
+  set Fixed temperature boundary indicators   = bottom, top 
+  subsection Box
+    set Top temperature    =  293
+    set Bottom temperature = 5000 	# Unrealistically high, so that it is always taken from initial temperature plugin
+  end
+end
+
+
+subsection Mesh deformation
+  set Additional tangential mesh velocity boundary indicators = right
+  set Mesh deformation boundary indicators = top: fastscape
+  set Surface stabilization theta = 1.0
+  
+  subsection Fastscape
+    set Vertical exaggeration = -1
+    set Maximum timestep = 500
+    set Number of steps = 7
+    set Surface resolution = 5
+    set Resolution difference = 0
+    set Additional fastscape refinement = 0
+    set Use ghost nodes = true
+    set Y extent in 2d = 25e3 #100e3
+    set Use velocities = true
+
+    subsection Boundary conditions
+    # Set everything to fixed to avoid FS mesh anomalies with COT node fix
+      set Bottom = 1
+      set Right  = 1
+      set Top    = 1
+      set Left   = 1
+    end
+
+    subsection Erosional parameters
+      set Drainage area exponent = 0.4              #m
+      set Slope exponent = 1                        #n
+      set Multi-direction slope exponent = -1        #p
+
+      set Bedrock diffusivity = 5e-3          #kd
+      set Bedrock river incision rate = 0.000010
+      set Bedrock deposition coefficient = 1       #G
+ 
+      set Sediment diffusivity = -1
+      set Sediment river incision rate = -1 
+      set Sediment deposition coefficient = 1        #G
+    end
+
+    set Use marine component = true
+     set Sediment rain = 0.000100
+    set Sediment rain intervals = 
+    set Use stratigraphy   = false #true
+    set Total steps        = 35756
+    set Number of horizons = 25
+
+    subsection Marine parameters
+      set Sea level = -200.000000
+      set Sand porosity = 0.
+      set Shale porosity = 0.
+      # Switch sand and shale parameters because internally they are reversed
+      set Sand e-folding depth = 1960 #3700 # m 
+      set Shale e-folding depth = 3700 #1960 # m 
+      
+      set Sand-shale ratio = 0.5
+      set Depth averaging thickness = 1e3
+      set Sand transport coefficient = 210.000000
+      set Shale transport coefficient = 70.000000
+    end
+  end
+end
+
+subsection Formulation
+  set Formulation          = custom
+  # incompressible
+  set Mass conservation    = ask material model
+  # use reference density in the temperature equation
+  set Temperature equation = reference density profile
+end
+
+subsection Boundary velocity model
+  set Prescribed velocity boundary indicators = left: function, right: function
+  set Tangential velocity boundary indicators = 
+  subsection Compensating bottom flow model
+    set Lateral compensation boundary indicators = left, right
+  end 
+  subsection Function
+    set Coordinate system   = cartesian
+    set Variable names      = x,y,t
+    set Function constants  = tswitch=40e6, mm=0.001, yr=1, outflow1=10, outflow2=10, Z=300e3, X=700e3 
+    set Function expression = if(x<X/2,-1,1)*outflow1/2*mm/yr; \
+                              0
+  end
+end
+
+subsection Boundary traction model
+  set Prescribed traction boundary indicators = bottom: initial lithostatic pressure
+  subsection Initial lithostatic pressure
+    set Representative point = 10000,0
+  end
+end
+
+
+subsection Gravity model
+  set Model name = vertical
+
+  subsection Vertical
+    set Magnitude = 9.81
+  end
+end
+
+
+subsection Material model
+  set Model name = visco plastic
+  set Material averaging = harmonic average only viscosity
+
+  subsection Visco Plastic
+
+    set Reference temperature = 293
+    set Reference viscosity = 1e22
+    
+    set Minimum strain rate = 1.e-25
+    set Reference strain rate = 1.e-16
+
+    set Minimum viscosity = 5e18
+    set Maximum viscosity = 1e25
+
+    # bg, plastic_strain, viscous_strain, sediment_age, deposition_depth, sediment, upper, lower, mantle_L, ratio_marine_continental_sediment, silt_fraction
+    set Heat capacities       = 1200
+    # Use densities for masked fields that are closest to the density of the area they are in to avoid artefacts from under/overshoot.
+    set Densities             = 3182, 2613, 2758, 2410, 2410, 2410, 2613, 2758, 3163, 2410, 2410
+    set Thermal expansivities = 3.0e-5, 2.7e-5, 2.7e-5, 3.7e-5, 3.7e-5, 3.7e-5, 2.7e-5, 2.7e-5, 3.0e-5, 3.7e-5, 3.7e-5
+    set Define thermal conductivities = true
+    set Thermal conductivities = 3, 2.5, 2.5, 2.1, 2.1, 2.1, 2.5, 2.5, 3, 2.5, 2.5
+
+    set Viscosity averaging scheme = harmonic
+
+    set Viscous flow law = composite
+
+    # Dislocation creep parameters for 
+    # 1. Background material/mantle (dry olivine)
+    #    Hirth & Kohlstedt (2003),  Geophys. Monogr. Am. Geophys. Soc., v.138, p.83-105.
+    #    "Rheology of the upper mantle and the mantle wedge:a view from the experimentalists"
+    # 2. Upper crust (wet quartzite)
+    #    Rutter & Brodie (2004), J. Struct. Geol., v.26, p.2011-2023.
+    #    "Experimental grain size-sensitive flow of hot-pressed Brazilian quartz aggregates"
+    # 3. Lower crust and weak seed (wet anorthite)
+    #    Rybacki et al. (2006), J. Geophys. Res., v.111(B3).
+    #    "Influence of water fugacity and activation volume on the flow properties of fine-grained    
+    #    anorthite aggregates"
+    # Note that the viscous pre-factors below are scaled to plane strain from unixial strain experiments.
+    # TODO check values and add wet olivine for sublithospheric mantle
+    set Prefactors for dislocation creep          = 2.12e-15,  1e-20,      1e-20 , 1e-20,      1e-20 , 8.57e-28,  8.57e-28,   7.13e-18,  6.52e-16, 1e-20, 1e-20
+    set Stress exponents for dislocation creep    =      3.5,  1.0  ,       1.0  , 1.0  ,       1.0  , 4.0     ,    4.0   ,      3.0  ,      3.5, 1, 1
+    set Activation energies for dislocation creep =   480.e3, 530.e3,      530.e3, 530.e3,      530.e3, 223.e3  ,   223.e3 ,   345.e3  ,   530.e3, 530.e3, 530e3
+    set Activation volumes for dislocation creep  =   11.e-6, 18.e-6,      18.e-6, 18.e-6,      18.e-6, 0.      ,    0.    ,    38.e-6 ,   18.e-6, 18.e-6, 18e-6
+
+    set Prefactors for diffusion creep          =     1.5e-9, 2.25e-9,      2.25e-9, 2.25e-9,      2.25e-9, 5.97e-19, 5.97e-19,   2.99e-25,  2.25e-9, 2.25e-9, 2.25e-9
+    set Activation energies for diffusion creep =    335.e3 , 375.e3 ,      375.e3 , 375.e3 ,      375.e3 , 223.e3  , 223.e3  ,   159.e3  ,   375.e3, 375e3, 375e3
+    set Activation volumes for diffusion creep  =     4.e-6 , 6.e-6  ,      6.e-6  ,  6.e-6  ,      6.e-6  ,  0.     ,    0.   ,   38.e-6  ,   6.e-6, 6.e-6, 6e-6
+    set Grain size                               =    1e-3
+    set Grain size exponents for diffusion creep =      0.  ,      0.    ,       0.    ,    0.    ,       0.    ,    2    ,   2     ,       3   ,     0, 0, 0
+    # Plasticity parameters
+    set Angles of internal friction = 26.56
+    set Cohesions                   = 5.e6
+  
+    # Strain weakening parameters
+    set Strain weakening mechanism  = plastic weakening with plastic strain and viscous weakening with viscous strain
+    set Start plasticity strain weakening intervals = 0.0
+    set End plasticity strain weakening intervals = 2.0
+    set Cohesion strain weakening factors = 1.0
+    set Friction strain weakening factors = 0.25
+    
+    set Start prefactor strain weakening intervals = 0.0
+    set End prefactor strain weakening intervals   = 2.0
+    set Prefactor strain weakening factors         = 1.0, 1.0, 1.0, 1.0, 1.0, 0.25, 0.25, 0.25, 0.25, 1.0, 1
+	
+  end
+end
+
+subsection Mesh refinement
+  set Initial global refinement                = 2
+  set Initial adaptive refinement              = 3
+  set Time steps between mesh refinement       = 0
+  set Strategy                                 = minimum refinement function
+  set Skip solvers on initial refinement       = false
+
+  subsection Minimum refinement function
+    set Coordinate system   = cartesian
+    set Variable names      = x,y
+    set Function expression = if(y>=258e3,5,if(y>170e3, 3, 1))
+  end
+
+end
+
+subsection Heating model
+  set List of model names = compositional heating, adiabatic heating, shear heating
+  subsection Adiabatic heating
+    set Use simplified adiabatic heating = true
+  end
+  subsection Compositional heating
+    # order:                                                  background, plastic_strain, viscous_strain, sediment_age, deposition_depth, sediment, upper, lower, mantle_L, ratio
+    set Use compositional field for heat production averaging =   0     ,      0        ,         0     ,  0      ,  0              , 1           , 1    ,  1   ,     1, 0, 0
+    set Compositional heating values                          =   0     ,      0        ,         0     ,  0      ,  0              , 1.2e-6      ,1.0e-6,0.1e-6,   0, 0, 0
+  end
+end
+
+subsection Adiabatic conditions model
+  set Model name = compute profile
+  subsection Compute profile
+    set Composition reference profile = function
+    # In terms of depth
+    # Moho depth 35 km, LAB depth 200 km (i.e. max LAB depth in model)
+    set Function expression           = 0; \
+					0; \
+					0; \ 
+					0; \ 
+					0; \ 
+                                        if(x<25e3,1,0); \
+                                        if(x>=25e3&x<45.0e3,1,0); \
+                                        if(x>=45.0e3&x<120e3,1,0); \
+					0; \ 
+                                        0
+  end
+end
+
+subsection Postprocess
+  set List of postprocessors = velocity statistics, temperature statistics, visualization, composition statistics, topography, domain volume statistics, host cap statistics
+  subsection Host and cap rock statistics
+    set Fault strain rate threshold = 5e-15
+  end
+  subsection Visualization
+    set Interpolate output            = false
+    set Write higher order output     = false
+    set List of output variables      = adiabat, viscosity, vertical heat flux, density, strain rate point and element wise, named additional outputs, thermal conductivity, heating, boundary indicators
+    set Time between graphical output = 500e3
+    set Point-wise stress and strain  = true
+  end
+  subsection Topography
+    set Output to file = true
+    set Time between text output = 500e3
+  end
+  
+  subsection Particles
+    set Number of particles = 200
+    set Time between data output = 500e3
+    set Data output format = ascii, vtu
+    set List of particle properties = position, velocity, pT path
+    set Particle generator name = probability density function #uniform box
+    set Number of grouped files = 1
+    subsection Generator
+      subsection Probability density function
+        set Function expression = if (x > 150e3 & x < 750e3 & y > 290e3 & y < 310e3, 1, 0)
+      end
+    end
+  end
+end
+
+subsection Checkpointing
+    set Steps between checkpoint = 50
+end
+
+subsection Termination criteria
+  set Checkpoint on termination = true
+end
+
