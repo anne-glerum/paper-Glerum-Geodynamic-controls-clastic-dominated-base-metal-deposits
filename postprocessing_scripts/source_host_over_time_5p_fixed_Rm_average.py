@@ -5,24 +5,18 @@ Created on Mon 14 Feb 2022 by Anne Glerum
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import rc
-# Do not put 1e10 at the top of graph,
-# but with the respective tick labels.
-# TODO: nothing works to turn it off.
 rc('axes.formatter', useoffset=False)
-# Scientific color maps
-from cmcrameri import cm
-from os.path import exists
-import io
-import re
 plt.rcParams["font.family"] = "Arial"
 rc("xtick", labelsize= 12)
 rc("font", size=12)
 rc("axes", titlesize=15, labelsize=12)
-#rc('axes', linewidth=3)
 rc("legend", fontsize=8)
+from os.path import exists
+import io
+import re
 
 # Path to models
-base = "./"
+base = "../"
 
 # Model names
 models = [
@@ -67,6 +61,7 @@ labels = [
          ]
 
 # Batlow
+# Scientific color maps (Crameri et al. 2020)
 color1=[0.0051932, 0.098238, 0.34984]
 color2=[0.063071, 0.24709, 0.37505]
 color3=[0.10684, 0.34977, 0.38455]
@@ -87,7 +82,6 @@ colors = [
           color_host,
           color_host,
          ]
-cmap = plt.cm.get_cmap(cm.batlow)
 
 linestyles = [
               'dotted', 
@@ -116,8 +110,8 @@ average_source_area_3 = [0.0 for t in mean_t]
 average_host_area_1 = [0.0 for t in mean_t]
 average_host_area_2 = [0.0 for t in mean_t]
 average_host_area_3 = [0.0 for t in mean_t]
-max_source = -2e9
-average_max_source = 0
+max_host = -2e9
+average_max_host = 0
 
 cm = 2.54  # centimeters in inches
 fig = plt.figure(figsize=(10.5/cm,6.6/cm),dpi=300)
@@ -140,6 +134,7 @@ for p in paths:
     interpolated_source_area = np.interp(mean_t, t, source_area)
     interpolated_host_area = np.interp(mean_t, t, host_area)
 
+    # Based on Rm value, add to corresponding average
     if '0001' in p:
       average_source_area_1 += interpolated_source_area
       average_host_area_1 += interpolated_host_area
@@ -150,44 +145,33 @@ for p in paths:
       average_source_area_3 += interpolated_source_area
       average_host_area_3 += interpolated_host_area
 
-    # Plot the raw area in km2 in 
-    # categorical batlow colors.
-#    plt.plot(t/1e6,source_area/1e6,color=colors[counter],linestyle='solid',label=labels[counter],marker=markers[counter],markevery=dmark,fillstyle='none')
-
-    max_source = max(source_area.max(),max_source)
-    average_max_source += source_area.max()
-
     counter += 1
 
-print ("Max source area:", max_source, "m2")
-print ("Average max source area:", average_max_source/9, "m2")
+average_host_1 = average_host_area_1/9.
+max_host = average_host_1.max()
+print ("Max average host area:", max_host/1e6, "km2")
 
-# Plot the average source area over time (divide by nine to get the average)
+# Plot the average source area over time (divide by nine to get the average) in km2
 ax.plot(mean_t/1e6,average_source_area_1/9e6,color=colors[0],linestyle=linestyles[0],label=None,marker=markers[0],markevery=dmark,fillstyle='none')
 ax.plot(mean_t/1e6,average_source_area_2/9e6,color=colors[1],linestyle=linestyles[1],label=None,marker=markers[1],markevery=dmark,fillstyle='none')
 ax.plot(mean_t/1e6,average_source_area_3/9e6,color=colors[2],linestyle=linestyles[2],label=None,marker=markers[2],markevery=dmark,fillstyle='none')
 
-# Plot the average host area over time (divide by nine to get the average)
+# Plot the average host area over time (divide by nine to get the average) in km2
 ax2.plot(mean_t/1e6,average_host_area_1/9e6,color=colors[3],linestyle=linestyles[3],label=labels[3],marker=markers[3],markevery=dmark,fillstyle='none')
 ax2.plot(mean_t/1e6,average_host_area_2/9e6,color=colors[4],linestyle=linestyles[4],label=labels[4],marker=markers[4],markevery=dmark,fillstyle='none')
 ax2.plot(mean_t/1e6,average_host_area_3/9e6,color=colors[5],linestyle=linestyles[5],label=labels[5],marker=markers[5],markevery=dmark,fillstyle='none')
 
-# add in time range onset of oceanic spreading
-#plt.axvspan(22.5, 25.25, color='lightgrey', alpha=0.5, lw=0)
-
 # Labelling of plot
 ax.set_xlabel("Time [My]",weight="bold")
 ax.set_ylabel(r"Source area [$\mathbf{km^2}$]",weight="bold", color=color_source)
-# Manually place legend 
-#ax.legend(loc='upper left',ncol=1, columnspacing = 1.5)
-# Title 
-#plt.title("Sediment area over time")
+# Grid
 ax.grid(axis='x',color='0.95')
 ax.grid(axis='y',color='0.95')
 
 # Ranges of the axes
 ax.set_xlim(-0.25,25.25) # My
 ax.set_ylim(-2,202) # km2
+# Ticks
 ax.ticklabel_format(axis='y',useOffset=False)
 ax.set_xticks(np.arange(0,30,5))
 ax.set_yticks([0,50,100,150,200])
@@ -202,26 +186,27 @@ ax2.yaxis.set_label_position('right')
 ax2.set_ylim(-10.0,1010.0)
 ax2.set_yticks([0,250,500,750,1000])
 
+# No tight layout so that all graphs have the same shape
+# and can be synthesized into one figure
 #plt.tight_layout()
 #fig.tight_layout()
 
 # Name the png according to the plotted field
-# Change as needed
 field='average_source_host_area'
-plt.savefig(output_name + '_CERI_' + str(field) + '.png',dpi=300,bbox_inches='tight')    
+#plt.savefig(output_name + '_CERI_' + str(field) + '.png',dpi=300,bbox_inches='tight')    
 print ("Output in: ", output_name + '_CERI_' + str(field) + '.png')
 
 # Output svg
-plt.savefig(output_name + '_CERI_' + str(field) + '.svg',dpi=300,bbox_inches='tight',format='svg')    
+#plt.savefig(output_name + '_CERI_' + str(field) + '.svg',dpi=300,bbox_inches='tight',format='svg')    
 print ("Output in: ", output_name + '_CERI_' + str(field) + '.svg')
 
-# Also output an svg without y tick labels
-field='average_source_host_area_nolabel'
+# Also output an svg with y tick labels of the same, largest size
+#field='average_source_host_area_nolabel'
 #ax.set_ylabel(None)
-ax.set_yticklabels(["200","200","200","200","200"])
+#ax.set_yticklabels(["200","200","200","200","200"])
 #ax2.set_ylabel(None)
-ax2.set_yticklabels(["1000","1000","1000","1000","1000"])
+#ax2.set_yticklabels(["1000","1000","1000","1000","1000"])
 #plt.tight_layout()
 #fig.tight_layout()
-plt.savefig(output_name + '_CERI_' + str(field) + '.svg',dpi=300,bbox_inches='tight',format='svg')    
-print ("Output in: ", output_name + '_CERI_' + str(field) + '.svg')
+#plt.savefig(output_name + '_CERI_' + str(field) + '.svg',dpi=300,bbox_inches='tight',format='svg')    
+#print ("Output in: ", output_name + '_CERI_' + str(field) + '.svg')

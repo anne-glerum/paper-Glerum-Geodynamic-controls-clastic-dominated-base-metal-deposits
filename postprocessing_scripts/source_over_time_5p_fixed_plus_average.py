@@ -5,24 +5,18 @@ Created on Mon 14 Feb 2022 by Anne Glerum
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import rc
-# Do not put 1e10 at the top of graph,
-# but with the respective tick labels.
-# TODO: nothing works to turn it off.
 rc('axes.formatter', useoffset=False)
-# Scientific color maps
-from cmcrameri import cm
-from os.path import exists
-import io
-import re
 plt.rcParams["font.family"] = "Arial"
 rc("xtick", labelsize= 12)
 rc("font", size=12)
 rc("axes", titlesize=15, labelsize=12)
-#rc('axes', linewidth=3)
 rc("legend", fontsize=8)
+from os.path import exists
+import io
+import re
 
 # Path to models
-base = "./"
+base = "../"
 
 # Model names
 models = [
@@ -53,6 +47,7 @@ labels = [
          ]
 
 # Batlow
+# Scientific colour maps (Crameri et al. 2020)
 color1=[0.0051932, 0.098238, 0.34984]
 color2=[0.063071, 0.24709, 0.37505]
 color3=[0.10684, 0.34977, 0.38455]
@@ -73,7 +68,6 @@ colors = [
           color7, 
           color8, 
           color9, 
-          color10, 
           color10, 
          ]
 cmap = plt.cm.get_cmap(cm.batlow)
@@ -151,38 +145,18 @@ for p in paths:
 print ("Max source area:", max_source, "m2")
 print ("Average max source area:", average_max_source/9, "m2")
 
-# Plot the average source area over time (divide by nine to get the average)
+# Plot the average source area over time (divide by nine to get the average) in km2
 plt.plot(mean_t/1e6,average_source_area/9e6,color=colors[counter],linestyle='solid',label=labels[counter],marker=markers[counter],markevery=dmark,fillstyle='none',linewidth=3)
 
-# add in time range onset of stable spreading
-#plt.axvspan(17.5, 25.25, color='lightgrey', alpha=0.5, lw=0)
 # add in time range onset of oceanic spreading
 plt.axvspan(20.0, 25.25, color='lightgrey', alpha=0.5, lw=0)
-
-#plt.axvspan(17.5, 25.25, color=color6, alpha=0.8, lw=0)
-#plt.axvspan(20.0, 25.25, color=color5, alpha=0.8, lw=0)
-#plt.axvspan(20.0, 25.25, color=color3, alpha=0.8, lw=0)
-#plt.axvspan(20.5, 25.25, color=color8, alpha=0.8, lw=0)
-#plt.axvspan(21.0, 25.25, color=color4, alpha=0.8, lw=0)
-#plt.axvspan(21.0, 25.25, color=color2, alpha=0.8, lw=0)
-#plt.axvspan(21.0, 25.25, color=color1, alpha=0.8, lw=0)
-#plt.axvspan(21.5, 25.25, color=color9, alpha=0.8, lw=0)
-##plt.vlines(17.5, -0.4, 1.7, color=color6, lw=1, linestyle='dashed')
-##plt.vlines(20.0, -0.4, 26., color=color3, lw=1, linestyle='dashed')
-##plt.vlines(20.0, -0.4, 18., color=color5, lw=1, linestyle='dashed')
-##plt.vlines(20.5, -0.4, 31., color=color8, lw=1, linestyle='dashed')
-##plt.vlines(21.0, -0.4, 30.5, color=color4, lw=1, linestyle='dashed')
-##plt.vlines(21.0, -0.4, 26., color=color2, lw=1, linestyle='dashed')
-##plt.vlines(21.0, -0.4, 19., color=color1, lw=1, linestyle='dashed')
-##plt.vlines(21.5, -0.4, 33., color=color9, lw=1, linestyle='dashed')
 
 # Labelling of plot
 plt.xlabel("Time [My]",weight="bold")
 plt.ylabel(r"Source area [$\mathbf{km^2}$]",weight="bold")
-# Manually place legend in lower right corner. 
+# Manually place legend
 plt.legend(loc='upper left',ncol=2, columnspacing = 1.5)
-# Title 
-#plt.title("Sediment area over time")
+# Grid 
 plt.grid(axis='x',color='0.95')
 plt.grid(axis='y',color='0.95')
 
@@ -191,9 +165,9 @@ plt.xlim(-0.25,25.25) # My
 plt.ylim(-0.4,40.4) # km2
 ax = plt.gca()
 ax.get_yaxis().get_major_formatter().set_useOffset(False)
+# Ticks
 plt.ticklabel_format(axis='y',useOffset=False)
 plt.xticks(np.arange(0,30,5))
-#plt.yticks([0,50,100,150,200,210])
 
 plt.tight_layout()
 fig.tight_layout()

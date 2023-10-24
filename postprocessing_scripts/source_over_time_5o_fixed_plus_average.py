@@ -5,54 +5,48 @@ Created on Mon 14 Feb 2022 by Anne Glerum
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import rc
-# Do not put 1e10 at the top of graph,
-# but with the respective tick labels.
-# TODO: nothing works to turn it off.
 rc('axes.formatter', useoffset=False)
-# Scientific color maps
-from cmcrameri import cm
-from os.path import exists
-import io
-import re
 plt.rcParams["font.family"] = "Arial"
 rc("xtick", labelsize= 12)
 rc("font", size=12)
 rc("axes", titlesize=15, labelsize=12)
-#rc('axes', linewidth=3)
 rc("legend", fontsize=8)
+from os.path import exists
+import io
+import re
 
 # Path to models
-base = "./"
+base = "../"
 
 # Model names
 models = [
-'5q_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed1236549_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
-'5q_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2323432_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
-'5q_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2349871_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
-'5q_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2928465_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
-'5q_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed3458045_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
-'5q_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed5346276_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
-'5q_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed7646354_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
-'5q_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed9023857_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
-'5q_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed9872345_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
+'5o_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed1236549_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
+'5o_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2323432_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
+'5o_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2349871_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
+'5o_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed2928465_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
+'5o_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed3458045_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
+'5o_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed5346276_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
+'5o_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed7646354_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
+'5o_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed9023857_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
+'5o_fixed_CERI_craton2000km_SWI2_minvisc5e18_A0.25_seed9872345_rain0.0001_Ksilt210_Ksand70_Kf1e-05_SL-200',
          ]
 
-output_name = '5q_fixed_rain0.0001_Km210_Km70_Kf1e-5_'
+output_name = '5o_fixed_rain0.0001_Km210_Km70_Kf1e-5_'
 
 labels = [
-          'NS-1',
-          'NS-2',
-          'NS-3',
-          'NS-4',
-          'NS-5',
-          'NS-6',
-          'NS-7',
-          'NS-8',
-          'NS-9',
-          'NS-av.',
+          'W-1',
+          'W-2',
+          'W-3',
+          'W-4',
+          'W-5',
+          'W-6',
+          'W-7',
+          'W-8',
+          'W-9',
+          'W-av.',
          ]
 
-# Batlow
+# Batlow (Scientific colour maps, Crameri et al. 2020)
 color1=[0.0051932, 0.098238, 0.34984]
 color2=[0.063071, 0.24709, 0.37505]
 color3=[0.10684, 0.34977, 0.38455]
@@ -76,7 +70,6 @@ colors = [
           color10, 
           color10, 
          ]
-cmap = plt.cm.get_cmap(cm.batlow)
 
 linestyles = [
               'dashed',
@@ -155,32 +148,32 @@ print ("Average max source area:", average_max_source/9, "m2")
 plt.plot(mean_t/1e6,average_source_area/9e6,color=colors[counter],linestyle='solid',label=labels[counter],marker=markers[counter],markevery=dmark,fillstyle='none',linewidth=3)
 
 # add in time range onset of oceanic spreading
-plt.axvspan(12.5, 25.25, color='lightgrey', alpha=0.5, lw=0)
+#plt.axvspan(25.0, 25.25, color='lightgrey', alpha=0.5, lw=0)
 
 # Labelling of plot
 plt.xlabel("Time [My]",weight="bold")
 plt.ylabel(r"Source area [$\mathbf{km^2}$]",weight="bold")
-# Manually place legend in lower right corner. 
+# Manually place legend
 plt.legend(loc='upper left',ncol=2, columnspacing = 1.5)
-# Title 
-#plt.title("Sediment area over time")
+# Grid
 plt.grid(axis='x',color='0.95')
 plt.grid(axis='y',color='0.95')
 
 # Ranges of the axes
 plt.xlim(-0.25,25.25) # My
 plt.ylim(-0.4,40.4) # km2
+
 ax = plt.gca()
 ax.get_yaxis().get_major_formatter().set_useOffset(False)
 plt.ticklabel_format(axis='y',useOffset=False)
+
+# Ticks
 plt.xticks(np.arange(0,30,5))
-#plt.yticks([0,50,100,150,200,210])
 
 plt.tight_layout()
 fig.tight_layout()
 
 # Name the png according to the plotted field
-# Change as needed
 field='average_source_area_'
 plt.savefig(output_name + '_CERI_' + str(field) + '.png',dpi=300,bbox_inches='tight')    
 print ("Output in: ", output_name + '_CERI_' + str(field) + '.png')
