@@ -46,22 +46,6 @@ color8=[0.96494, 0.62693, 0.46486]
 color9=[0.99277, 0.70769, 0.71238]
 color10=[0.98332, 0.79091, 0.95375]
 
-linestyles = [
-              'solid', 
-              'solid', 
-              'solid', 
-              'solid', 
-              'solid', 
-              'solid', 
-              'solid', 
-              'solid', 
-              'solid', 
-             ]
-markers = [
-           '','','','','','','','','','','','','','','','','','','','','','','','',''
-          ]
-dmark = 200
-
 # Parameters to estimate endowment
 density = 2410 # kg/m3, sediment
 F = 0.65
@@ -80,9 +64,9 @@ counter = 0
 cm = 2.54  # centimeters in inches
 fig = plt.figure(figsize=(10.5/cm,6.6/cm),dpi=300)
 
-n_timesteps = 7148
-average_endowment_Zn = np.zeros(n_timesteps)
-average_endowment_Pb = np.zeros(n_timesteps)
+mean_t = np.arange(0, 25e6, 2500)
+average_endowment_Zn = [0.0 for t in mean_t]
+average_endowment_Pb = [0.0 for t in mean_t]
 
 for p in paths:
     print(p)
@@ -95,29 +79,21 @@ for p in paths:
         clean_lines = (re.sub('\s+',' ',line) for line in f)
         t,source_area,host_area,fault_area = np.genfromtxt(clean_lines, comments='#', usecols=(1,62,63,64), delimiter=' ', unpack=True)
 
-    # In case the simulation did not run to completion,
-    # pad with zeroes. 
-    if np.size(source_area) < n_timesteps:
-      print ('before:',np.size(source_area),source_area)
-      padded_source_area = np.pad(source_area, (0,n_timesteps-np.size(source_area)), 'constant', constant_values = (0,0))
-      print ('after:',np.size(padded_source_area),padded_source_area)
-    elif np.size(source_area) > n_timesteps:
-      print ('More timesteps: ', np.size(source_area))
-      padded_source_area = source_area[0:n_timesteps]
-    else:
-      padded_source_area = source_area
+    # Interpolate to a predefined set of timesteps, as not all runs have the same number
+    # of timesteps.
+    interpolated_source_area = np.interp(mean_t, t, source_area)
 
     # Add the endowment over time of this run to its sum 
     # endowment in Mt (= 1e6 * 1e3 kg) =
     # area [m2] * width [m] * density [kg/m3] * F [-] * C [ppm] / 1e6 / 1e9
-    average_endowment_Zn += padded_source_area*width*density*F*C_Zn/1e6/1e9
-    average_endowment_Pb += padded_source_area*width*density*F*C_Pb/1e6/1e9
+    average_endowment_Zn += interpolated_source_area*width*density*F*C_Zn/1e6/1e9
+    average_endowment_Pb += interpolated_source_area*width*density*F*C_Pb/1e6/1e9
 
     counter += 1
 
 # Plot average endowment (assuming last run has the right amount of timesteps in t)
-plt.plot(t/1e6,average_endowment_Zn/9,color=color1,linestyle='solid',label='NA-av. Zn',marker='')
-plt.plot(t/1e6,average_endowment_Pb/9,color=color1,linestyle='dashed',label='NA-av. Pb',marker='')
+plt.plot(mean_t/1e6,average_endowment_Zn/9,color=color1,linestyle='solid',label='NA-av. Zn',marker='')
+plt.plot(mean_t/1e6,average_endowment_Pb/9,color=color1,linestyle='dashed',label='NA-av. Pb',marker='')
 
 # add in time range onset of oceanic spreading
 plt.axvspan(20.0, 25.25, color='lightgrey', alpha=0.5, lw=0)
