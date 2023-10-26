@@ -163,7 +163,7 @@ ax2.plot(mean_t/1e6,average_host_area_3/9e6,color=colors[5],linestyle=linestyles
 
 # Labelling of plot
 ax.set_xlabel("Time [My]",weight="bold")
-ax.set_ylabel(r"Source area [$\mathbf{km^2}$]",weight="bold", color=color_source)
+ax.set_ylabel(r"Source area [km$\mathbf{^2}$]",weight="bold", color=color_source)
 # Grid
 ax.grid(axis='x',color='0.95')
 ax.grid(axis='y',color='0.95')
@@ -193,11 +193,11 @@ ax2.set_yticks([0,250,500,750,1000])
 
 # Name the png according to the plotted field
 field='average_source_host_area'
-#plt.savefig(output_name + '_CERI_' + str(field) + '.png',dpi=300,bbox_inches='tight')    
+plt.savefig(output_name + '_CERI_' + str(field) + '.png',dpi=300,bbox_inches='tight')
 print ("Output in: ", output_name + '_CERI_' + str(field) + '.png')
 
 # Output svg
-#plt.savefig(output_name + '_CERI_' + str(field) + '.svg',dpi=300,bbox_inches='tight',format='svg')    
+plt.savefig(output_name + '_CERI_' + str(field) + '.svg',dpi=300,bbox_inches='tight',format='svg')
 print ("Output in: ", output_name + '_CERI_' + str(field) + '.svg')
 
 # Also output an svg with y tick labels of the same, largest size
