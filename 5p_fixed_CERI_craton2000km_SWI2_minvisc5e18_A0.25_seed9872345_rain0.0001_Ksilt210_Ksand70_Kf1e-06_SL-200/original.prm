@@ -105,7 +105,6 @@ end
 
 subsection Compositional fields
   set Number of fields = 10
-  # attention: _Plugin_InitialCompositionRift requires a field called strain to seed in the initial noise
   set Names of fields = plastic_strain, viscous_strain, sediment_age, deposition_depth, sediment, upper, lower, mantle_L, ratio_marine_continental_sediment, silt_fraction
 end 
 
@@ -325,7 +324,6 @@ subsection Material model
     #    "Influence of water fugacity and activation volume on the flow properties of fine-grained    
     #    anorthite aggregates"
     # Note that the viscous pre-factors below are scaled to plane strain from unixial strain experiments.
-    # TODO check values and add wet olivine for sublithospheric mantle
     set Prefactors for dislocation creep          = 2.12e-15,  1e-20,      1e-20 , 1e-20,      1e-20 , 8.57e-28,  8.57e-28,   7.13e-18,  6.52e-16, 1e-20, 1e-20
     set Stress exponents for dislocation creep    =      3.5,  1.0  ,       1.0  , 1.0  ,       1.0  , 4.0     ,    4.0   ,      3.0  ,      3.5, 1, 1
     set Activation energies for dislocation creep =   480.e3, 530.e3,      530.e3, 530.e3,      530.e3, 223.e3  ,   223.e3 ,   345.e3  ,   530.e3, 530.e3, 530e3
