@@ -314,7 +314,7 @@ subsection Material model
     set Viscous flow law = composite
 
     # Dislocation creep parameters for 
-    # 1. Background material/mantle (dry olivine)
+    # 1. Lithospheric mantle (dry olivine)
     #    Hirth & Kohlstedt (2003),  Geophys. Monogr. Am. Geophys. Soc., v.138, p.83-105.
     #    "Rheology of the upper mantle and the mantle wedge:a view from the experimentalists"
     # 2. Upper crust (wet quartzite)
@@ -374,7 +374,7 @@ subsection Heating model
     set Use simplified adiabatic heating = true
   end
   subsection Compositional heating
-    # order:                                                  background, plastic_strain, viscous_strain, sediment_age, deposition_depth, sediment, upper, lower, mantle_L, ratio
+    # order:                                                  background, plastic_strain, viscous_strain, sediment_age, deposition_depth, sediment, upper, lower, mantle_L, ratio_marine_continental_sediment, silt_fraction
     set Use compositional field for heat production averaging =   0     ,      0        ,         0     ,  0      ,  0              , 1           , 1    ,  1   ,     1, 0, 0
     set Compositional heating values                          =   0     ,      0        ,         0     ,  0      ,  0              , 1.2e-6      ,1.0e-6,0.1e-6,   0, 0, 0
   end
