@@ -28,7 +28,11 @@ A copy of e5d8d53 can be found in the folder /src_ASPECT.
 ## Additional ASPECT plugins
 For the initial model conditions, we used the ASPECT plugins in the folder /plugins. 
 The file CMakeLists.txt can be used to install these plugins as shared libraries
-against your ASPECT installation.
+against your ASPECT installation with:
+
+1. Enter plugins directory
+2. cmake -DAspect_DIR=/path/to/ASPECT/installation/ .
+3. make
 
 ## FastScape version
 
@@ -44,7 +48,9 @@ file name original.prm.
 
 Naming conventions:
 5p - narrow asymmetric rift simulations
+
 5q - narrow symmetric rift simulations
+
 5o - wide rift simulations
 
 ## ASPECT output files
