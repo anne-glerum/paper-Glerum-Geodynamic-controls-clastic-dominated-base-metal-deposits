@@ -1,0 +1,21 @@
+# 1: Time step number
+# 2: Time (years)
+# 3: Time step size (years)
+# 4: Number of mesh cells
+# 5: Number of Stokes degrees of freedom
+# 6: Number of temperature degrees of freedom
+# 7: Iterations for temperature solver
+# 8: Iterations for Stokes solver
+# 9: Velocity iterations in Stokes preconditioner
+# 10: Schur complement iterations in Stokes preconditioner
+# 11: Visualization file name
+# 12: RMS velocity (m/year)
+# 13: Max. velocity (m/year)
+# 14: Minimal temperature (K)
+# 15: Average temperature (K)
+# 16: Maximal temperature (K)
+# 17: Average nondimensional temperature (K)
+# 18: Outward heat flux through boundary with indicator 0 ("bottom") (W)
+# 19: Outward heat flux through boundary with indicator 1 ("top") (W)
+0 0.000000000000e+00 0.000000000000e+00 2535 24684 10928  0 158 163 808 output-latent_heat_viscosity/solution/solution-00000 1.61098263e-02 7.77744488e-02 2.73000000e+02 1.58707078e+03 2.60000000e+03 5.64705966e-01 -6.56436769e+05 9.57854415e+05 
+1 1.156527063597e+06 1.156527063597e+06 2535 24684 10928 20 122 126 618 output-latent_heat_viscosity/solution/solution-00001 1.61508797e-02 7.77299007e-02 2.73000000e+02 1.58676036e+03 2.60000000e+03 5.64572564e-01 -7.87703148e+05 1.47336241e+06 

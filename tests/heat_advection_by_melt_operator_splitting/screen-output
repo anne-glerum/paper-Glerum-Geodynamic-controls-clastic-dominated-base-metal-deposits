@@ -1,0 +1,139 @@
+
+Loading shared library <./libheat_advection_by_melt_operator_splitting.so>
+
+Number of active cells: 256 (on 5 levels)
+Number of degrees of freedom: 7,369 (2,178+1,057+2,178+289+1,089+289+289)
+
+*** Timestep 0:  t=0 seconds, dt=0 seconds
+   Solving temperature system... 0 iterations.
+   Solving porosity system ... 0 iterations.
+   Skipping peridotite composition solve because RHS is zero.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 36+0 iterations.
+   Solving fluid velocity system... 1 iterations.
+      Relative nonlinear residuals (temperature, compositional fields, Stokes system): 1.67942e-16, 1.44551e-16, 0, 0.0526341
+      Relative nonlinear residual (total system) after nonlinear iteration 1: 0.0526341
+
+   Solving temperature system... 0 iterations.
+   Solving porosity system ... 0 iterations.
+   Skipping peridotite composition solve because RHS is zero.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+0 iterations.
+   Solving fluid velocity system... 1 iterations.
+      Relative nonlinear residuals (temperature, compositional fields, Stokes system): 1.67942e-16, 1.44551e-16, 0, 9.76814e-13
+      Relative nonlinear residual (total system) after nonlinear iteration 2: 9.76814e-13
+
+
+   Postprocessing:
+     Temperature min/avg/max:       1 K, 1.5 K, 2 K
+     Heating rate (average/total):  0.05 W/kg, 0.1 W
+     Writing graphical output:      output-heat_advection_by_melt_operator_splitting/solution/solution-00000
+
+*** Timestep 1:  t=0.03125 seconds, dt=0.03125 seconds
+   Solving composition reactions... in 1 substep(s).
+   Solving temperature system... 6 iterations.
+   Solving porosity system ... 0 iterations.
+   Skipping peridotite composition solve because RHS is zero.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+0 iterations.
+   Solving fluid velocity system... 1 iterations.
+      Relative nonlinear residuals (temperature, compositional fields, Stokes system): 0.00075425, 1.23918e-15, 0, 9.76817e-13
+      Relative nonlinear residual (total system) after nonlinear iteration 1: 0.00075425
+
+   Solving temperature system... 0 iterations.
+   Solving porosity system ... 0 iterations.
+   Skipping peridotite composition solve because RHS is zero.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+0 iterations.
+   Solving fluid velocity system... 1 iterations.
+      Relative nonlinear residuals (temperature, compositional fields, Stokes system): 2.68618e-13, 1.23918e-15, 0, 9.76817e-13
+      Relative nonlinear residual (total system) after nonlinear iteration 2: 9.76817e-13
+
+
+   Postprocessing:
+     Temperature min/avg/max:       1 K, 1.5 K, 1.99 K
+     Heating rate (average/total):  0.05 W/kg, 0.1 W
+     Writing graphical output:      output-heat_advection_by_melt_operator_splitting/solution/solution-00001
+
+*** Timestep 2:  t=0.0625 seconds, dt=0.03125 seconds
+   Solving composition reactions... in 1 substep(s).
+   Solving temperature system... 9 iterations.
+   Solving porosity system ... 0 iterations.
+   Skipping peridotite composition solve because RHS is zero.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+0 iterations.
+   Solving fluid velocity system... 1 iterations.
+      Relative nonlinear residuals (temperature, compositional fields, Stokes system): 0.000380678, 8.09815e-16, 0, 9.76817e-13
+      Relative nonlinear residual (total system) after nonlinear iteration 1: 0.000380678
+
+   Solving temperature system... 0 iterations.
+   Solving porosity system ... 0 iterations.
+   Skipping peridotite composition solve because RHS is zero.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+0 iterations.
+   Solving fluid velocity system... 1 iterations.
+      Relative nonlinear residuals (temperature, compositional fields, Stokes system): 1.25536e-13, 8.09815e-16, 0, 9.76817e-13
+      Relative nonlinear residual (total system) after nonlinear iteration 2: 9.76817e-13
+
+
+   Postprocessing:
+     Temperature min/avg/max:       1 K, 1.5 K, 1.986 K
+     Heating rate (average/total):  0.05 W/kg, 0.1 W
+     Writing graphical output:      output-heat_advection_by_melt_operator_splitting/solution/solution-00002
+
+*** Timestep 3:  t=0.09375 seconds, dt=0.03125 seconds
+   Solving composition reactions... in 1 substep(s).
+   Solving temperature system... 8 iterations.
+   Solving porosity system ... 0 iterations.
+   Skipping peridotite composition solve because RHS is zero.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+0 iterations.
+   Solving fluid velocity system... 1 iterations.
+      Relative nonlinear residuals (temperature, compositional fields, Stokes system): 0.000154136, 8.09815e-16, 0, 9.76817e-13
+      Relative nonlinear residual (total system) after nonlinear iteration 1: 0.000154136
+
+   Solving temperature system... 0 iterations.
+   Solving porosity system ... 0 iterations.
+   Skipping peridotite composition solve because RHS is zero.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+0 iterations.
+   Solving fluid velocity system... 1 iterations.
+      Relative nonlinear residuals (temperature, compositional fields, Stokes system): 4.26978e-13, 8.09815e-16, 0, 9.76817e-13
+      Relative nonlinear residual (total system) after nonlinear iteration 2: 9.76817e-13
+
+
+   Postprocessing:
+     Temperature min/avg/max:       1 K, 1.5 K, 1.986 K
+     Heating rate (average/total):  0.05 W/kg, 0.1 W
+     Writing graphical output:      output-heat_advection_by_melt_operator_splitting/solution/solution-00003
+
+*** Timestep 4:  t=0.1 seconds, dt=0.00625 seconds
+   Solving composition reactions... in 1 substep(s).
+   Solving temperature system... 7 iterations.
+   Solving porosity system ... 0 iterations.
+   Skipping peridotite composition solve because RHS is zero.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+0 iterations.
+   Solving fluid velocity system... 1 iterations.
+      Relative nonlinear residuals (temperature, compositional fields, Stokes system): 1.55833e-05, 2.60191e-16, 0, 9.7684e-13
+      Relative nonlinear residual (total system) after nonlinear iteration 1: 1.55833e-05
+
+   Solving temperature system... 0 iterations.
+   Solving porosity system ... 0 iterations.
+   Skipping peridotite composition solve because RHS is zero.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+0 iterations.
+   Solving fluid velocity system... 1 iterations.
+      Relative nonlinear residuals (temperature, compositional fields, Stokes system): 2.35654e-13, 2.60191e-16, 0, 9.7684e-13
+      Relative nonlinear residual (total system) after nonlinear iteration 2: 9.7684e-13
+
+
+   Postprocessing:
+     Temperature min/avg/max:       1 K, 1.5 K, 1.986 K
+     Heating rate (average/total):  0.05 W/kg, 0.1 W
+     Writing graphical output:      output-heat_advection_by_melt_operator_splitting/solution/solution-00004
+
+Termination requested by criterion: end time
+
+
+

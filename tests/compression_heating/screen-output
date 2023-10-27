@@ -1,0 +1,60 @@
+
+Loading shared library <./libcompression_heating.so>
+
+Number of active cells: 256 (on 5 levels)
+Number of degrees of freedom: 7,369 (2,178+1,057+2,178+289+1,089+289+289)
+
+*** Timestep 0:  t=0 seconds, dt=0 seconds
+   Solving temperature system... 0 iterations.
+   Solving porosity system ... 0 iterations.
+   Skipping peridotite composition solve because RHS is zero.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 83+0 iterations.
+   Solving fluid velocity system... 10 iterations.
+      Relative nonlinear residuals (temperature, compositional fields, Stokes system): 1.12714e-16, 9.37333e-17, 0, 1
+      Relative nonlinear residual (total system) after nonlinear iteration 1: 1
+
+   Solving temperature system... 0 iterations.
+   Solving porosity system ... 0 iterations.
+   Skipping peridotite composition solve because RHS is zero.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 4+0 iterations.
+   Solving fluid velocity system... 10 iterations.
+      Relative nonlinear residuals (temperature, compositional fields, Stokes system): 1.12714e-16, 9.37333e-17, 0, 1.34401e-12
+      Relative nonlinear residual (total system) after nonlinear iteration 2: 1.34401e-12
+
+
+   Postprocessing:
+     Temperature min/avg/max:       1600 K, 1600 K, 1600 K
+     Heating rate (average/total):  0.51 W/kg, 1.02 W
+     Writing graphical output:      output-compression_heating/solution/solution-00000
+
+*** Timestep 1:  t=0.3 seconds, dt=0.3 seconds
+   Solving temperature system... 8 iterations.
+   Solving porosity system ... 5 iterations.
+   Skipping peridotite composition solve because RHS is zero.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 78+0 iterations.
+   Solving fluid velocity system... 10 iterations.
+      Relative nonlinear residuals (temperature, compositional fields, Stokes system): 0.000127485, 0.0803571, 0, 6.55899
+      Relative nonlinear residual (total system) after nonlinear iteration 1: 6.55899
+
+   Solving temperature system... 7 iterations.
+   Solving porosity system ... 2 iterations.
+   Skipping peridotite composition solve because RHS is zero.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 40+0 iterations.
+   Solving fluid velocity system... 10 iterations.
+      Relative nonlinear residuals (temperature, compositional fields, Stokes system): 3.71304e-06, 4.04438e-08, 0, 2.4961e-06
+      Relative nonlinear residual (total system) after nonlinear iteration 2: 3.71304e-06
+
+
+   Postprocessing:
+     Temperature min/avg/max:       1600 K, 1600 K, 1600 K
+     Heating rate (average/total):  0.51 W/kg, 1.02 W
+     Writing graphical output:      output-compression_heating/solution/solution-00001
+
+Termination requested by criterion: end time
+
+
+

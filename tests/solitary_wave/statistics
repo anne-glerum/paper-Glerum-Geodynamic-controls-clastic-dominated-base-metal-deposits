@@ -1,0 +1,21 @@
+# 1: Time step number
+# 2: Time (years)
+# 3: Time step size (years)
+# 4: Number of mesh cells
+# 5: Number of Stokes degrees of freedom
+# 6: Number of temperature degrees of freedom
+# 7: Number of degrees of freedom for all compositions
+# 8: Number of nonlinear iterations
+# 9: Iterations for temperature solver
+# 10: Iterations for composition solver 1
+# 11: Iterations for Stokes solver
+# 12: Velocity iterations in Stokes preconditioner
+# 13: Schur complement iterations in Stokes preconditioner
+# 14: Visualization file name
+# 15: Minimal value for composition porosity
+# 16: Maximal value for composition porosity
+# 17: Global mass for composition porosity
+# 18: RMS velocity (m/year)
+# 19: Max. velocity (m/year)
+0 0.000000000000e+00 0.000000000000e+00 640 6583 2889 2889 2 0  0 9 54 241 output-solitary_wave/solution/solution-00000 1.00000000e-03 1.00000000e-02 1.32970963e+01 1.66058237e-04 1.67158942e-04 
+1 2.000000000000e+03 2.000000000000e+03 640 6583 2889 2889 1 0 13 4 33 125                                           "" 9.99996612e-04 9.99998929e-03 1.32970963e+01 1.66058238e-04 1.67158945e-04 

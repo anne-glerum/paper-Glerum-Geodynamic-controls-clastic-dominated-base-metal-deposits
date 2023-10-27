@@ -1,0 +1,27 @@
+
+Loading shared library <./libnsinker_gmg_idr.so>
+
+Vectorization over 2 doubles = 128 bits (SSE2), VECTORIZATION_LEVEL=1
+Number of active cells: 64 (on 3 levels)
+Number of degrees of freedom: 3,041 (2,187+125+729)
+
+*** Timestep 0:  t=0 seconds, dt=0 seconds
+   Solving Stokes system... 
+    GMG coarse size A: 81, coarse size S: 8
+    GMG n_levels: 3
+    Viscosity range: 0.01 - 0.198921
+    GMG workload imbalance: 1
+    Stokes solver: 9+0 iterations.
+    Schur complement preconditioner: 25+0 iterations.
+    A block preconditioner: 25+0 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 0.999954
+
+
+   Postprocessing:
+     System matrix memory consumption:  0.05 MB
+     Writing graphical output:          output-nsinker_gmg_idr/solution/solution-00000
+
+Termination requested by criterion: end time
+
+
+

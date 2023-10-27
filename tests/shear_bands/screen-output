@@ -1,0 +1,88 @@
+
+Loading shared library <./libshear_bands.so>
+
+Number of active cells: 1,024 (on 5 levels)
+Number of degrees of freedom: 30,824 (8,514+4,177+8,514+1,105+4,257+4,257)
+
+*** Timestep 0:  t=0 years, dt=0 years
+   Skipping temperature solve because RHS is zero.
+   Solving porosity system ... 9 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 31+0 iterations.
+   Solving fluid velocity system... 11 iterations.
+      Relative nonlinear residuals (temperature, compositional fields, Stokes system): 0, 1.46299e-16, 1
+      Relative nonlinear residual (total system) after nonlinear iteration 1: 1
+
+   Skipping temperature solve because RHS is zero.
+   Solving porosity system ... 8 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 9+0 iterations.
+   Solving fluid velocity system... 11 iterations.
+      Relative nonlinear residuals (temperature, compositional fields, Stokes system): 0, 1.10905e-16, 0.0307263
+      Relative nonlinear residual (total system) after nonlinear iteration 2: 0.0307263
+
+   Skipping temperature solve because RHS is zero.
+   Solving porosity system ... 8 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 9+0 iterations.
+   Solving fluid velocity system... 11 iterations.
+      Relative nonlinear residuals (temperature, compositional fields, Stokes system): 0, 1.06987e-16, 0.0184908
+      Relative nonlinear residual (total system) after nonlinear iteration 3: 0.0184908
+
+   Skipping temperature solve because RHS is zero.
+   Solving porosity system ... 8 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 8+0 iterations.
+   Solving fluid velocity system... 11 iterations.
+      Relative nonlinear residuals (temperature, compositional fields, Stokes system): 0, 1.04795e-16, 0.0132089
+      Relative nonlinear residual (total system) after nonlinear iteration 4: 0.0132089
+
+
+   Postprocessing:
+     Writing graphical output:  output-shear_bands/solution/solution-00000
+     Compositions min/max/mass: 0.04952/0.05046/2e-07
+     RMS, max velocity:         289 m/year, 493 m/year
+
+*** Timestep 1:  t=3e-08 years, dt=3e-08 years
+   Skipping temperature solve because RHS is zero.
+   Solving porosity system ... 56 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 10+0 iterations.
+   Solving fluid velocity system... 11 iterations.
+      Relative nonlinear residuals (temperature, compositional fields, Stokes system): 0, 0.00261608, 0.000399582
+      Relative nonlinear residual (total system) after nonlinear iteration 1: 0.000399582
+
+   Skipping temperature solve because RHS is zero.
+   Solving porosity system ... 56 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 10+0 iterations.
+   Solving fluid velocity system... 11 iterations.
+      Relative nonlinear residuals (temperature, compositional fields, Stokes system): 0, 0.000365744, 0.000243984
+      Relative nonlinear residual (total system) after nonlinear iteration 2: 0.000243984
+
+   Skipping temperature solve because RHS is zero.
+   Solving porosity system ... 56 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 10+0 iterations.
+   Solving fluid velocity system... 11 iterations.
+      Relative nonlinear residuals (temperature, compositional fields, Stokes system): 0, 0.000247727, 0.000178924
+      Relative nonlinear residual (total system) after nonlinear iteration 3: 0.000178924
+
+   Skipping temperature solve because RHS is zero.
+   Solving porosity system ... 56 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 10+0 iterations.
+   Solving fluid velocity system... 11 iterations.
+      Relative nonlinear residuals (temperature, compositional fields, Stokes system): 0, 0.000211639, 0.00014165
+      Relative nonlinear residual (total system) after nonlinear iteration 4: 0.00014165
+
+
+   Postprocessing:
+     Writing graphical output:  output-shear_bands/solution/solution-00001
+     Compositions min/max/mass: 0.04944/0.05051/2e-07
+     RMS, max velocity:         289 m/year, 493 m/year
+
+Termination requested by criterion: end time
+
+
+

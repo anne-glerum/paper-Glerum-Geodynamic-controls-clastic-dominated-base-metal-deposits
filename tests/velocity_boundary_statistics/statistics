@@ -1,0 +1,33 @@
+# 1: Time step number
+# 2: Time (seconds)
+# 3: Time step size (seconds)
+# 4: Number of mesh cells
+# 5: Number of Stokes degrees of freedom
+# 6: Number of temperature degrees of freedom
+# 7: Iterations for temperature solver
+# 8: Iterations for Stokes solver
+# 9: Velocity iterations in Stokes preconditioner
+# 10: Schur complement iterations in Stokes preconditioner
+# 11: RMS velocity (m/s)
+# 12: Max. velocity (m/s)
+# 13: Minimal temperature (K)
+# 14: Average temperature (K)
+# 15: Maximal temperature (K)
+# 16: Outward heat flux through boundary with indicator 0 ("bottom") (W)
+# 17: Outward heat flux through boundary with indicator 1 ("top") (W)
+# 18: Outward heat flux through boundary with indicator 2 ("left") (W)
+# 19: Outward heat flux through boundary with indicator 3 ("right") (W)
+# 20: Maximum velocity magnitude on boundary with indicator 0 ("bottom") (m/s)
+# 21: Minimum velocity magnitude on boundary with indicator 0 ("bottom") (m/s)
+# 22: RMS velocity on boundary with indicator 0 ("bottom") (m/s)
+# 23: Maximum velocity magnitude on boundary with indicator 1 ("top") (m/s)
+# 24: Minimum velocity magnitude on boundary with indicator 1 ("top") (m/s)
+# 25: RMS velocity on boundary with indicator 1 ("top") (m/s)
+# 26: Maximum velocity magnitude on boundary with indicator 2 ("left") (m/s)
+# 27: Minimum velocity magnitude on boundary with indicator 2 ("left") (m/s)
+# 28: RMS velocity on boundary with indicator 2 ("left") (m/s)
+# 29: Maximum velocity magnitude on boundary with indicator 3 ("right") (m/s)
+# 30: Minimum velocity magnitude on boundary with indicator 3 ("right") (m/s)
+# 31: RMS velocity on boundary with indicator 3 ("right") (m/s)
+0 0.000000000000e+00 0.000000000000e+00 768 7235 3201  0 45 47  46 1.20140362e-09 3.64093543e-09  0.00000000e+00 1.00295466e+02 1.61300000e+03 -3.29108493e+05 -5.47394611e+04 0.00000000e+00 0.00000000e+00 3.62863865e-09 4.25231384e-12 2.02720674e-09 0.00000000e+00 0.00000000e+00 0.00000000e+00 1.74469929e-10 2.11984341e-12 1.10483481e-10 1.42208921e-09 1.76916409e-12 9.05053141e-10 
+1 1.000000000000e+13 1.000000000000e+13 867 8441 3735 20 40 42 168 1.23835243e-09 3.70902704e-09 -2.13938569e+02 1.00443274e+02 1.61300000e+03 -8.11387122e+04 -7.36336679e+04 0.00000000e+00 0.00000000e+00 3.69280678e-09 4.27165574e-12 2.06433771e-09 0.00000000e+00 0.00000000e+00 0.00000000e+00 1.75351174e-10 2.12050857e-12 1.11027974e-10 1.44137074e-09 1.76812768e-12 9.18101323e-10 

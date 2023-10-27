@@ -1,0 +1,75 @@
+
+Number of active cells: 768 (on 4 levels)
+Number of degrees of freedom: 13,920 (6,528+864+3,264+3,264)
+
+*** Timestep 0:  t=0 seconds, dt=0 seconds
+   Skipping temperature solve because RHS is zero.
+   Solving C_1 system ... 0 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 54+0 iterations.
+
+   Postprocessing:
+
+     Model domain depth (m):                        2.855e+06
+     Temperature contrast across model domain (K):  0
+     Reference depth (m):                           0
+     Reference temperature (K):                     0
+     Reference pressure (Pa):                       0
+     Reference gravity (m/s^2):                     9.816
+     Reference density (kg/m^3):                    3338.68
+     Reference thermal expansion coefficient (1/K): 4e-05
+     Reference specific heat capacity (J/(K*kg)):   1250
+     Reference thermal conductivity (W/(m*K)):      4.7
+     Reference viscosity (Pa*s):                    1e+22
+     Reference thermal diffusivity (m^2/s):         1.12619e-06
+     Rayleigh number:                               0
+
+     Writing graphical output:           output-passive_comp/solution/solution-00000
+     RMS, max velocity:                  5.11e-08 m/s, 6.3e-08 m/s
+     Temperature min/avg/max:            0 K, 0 K, 0 K
+     Heat fluxes through boundary parts: 39.09 W, 12.3 W
+     Writing depth average:              output-passive_comp/depth_average
+
+*** Timestep 1:  t=2.81625e+12 seconds, dt=2.81625e+12 seconds
+   Solving temperature system... 27 iterations.
+   Solving C_1 system ... 19 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 4+0 iterations.
+
+   Postprocessing:
+     Writing graphical output:           output-passive_comp/solution/solution-00001
+     RMS, max velocity:                  5.11e-08 m/s, 6.3e-08 m/s
+     Temperature min/avg/max:            -1.939e-06 K, 0.0001666 K, 0.0008265 K
+     Heat fluxes through boundary parts: 296.7 W, 185 W
+     Writing depth average:              output-passive_comp/depth_average
+
+*** Timestep 2:  t=5.6325e+12 seconds, dt=2.81625e+12 seconds
+   Solving temperature system... 17 iterations.
+   Solving C_1 system ... 21 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 5+0 iterations.
+
+   Postprocessing:
+     Writing graphical output:           output-passive_comp/solution/solution-00002
+     RMS, max velocity:                  5.11e-08 m/s, 6.3e-08 m/s
+     Temperature min/avg/max:            -2.203e-06 K, 0.0003337 K, 0.001549 K
+     Heat fluxes through boundary parts: 218 W, 167.5 W
+     Writing depth average:              output-passive_comp/depth_average
+
+*** Timestep 3:  t=8e+12 seconds, dt=2.3675e+12 seconds
+   Solving temperature system... 15 iterations.
+   Solving C_1 system ... 19 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 2+0 iterations.
+
+   Postprocessing:
+     Writing graphical output:           output-passive_comp/solution/solution-00003
+     RMS, max velocity:                  5.11e-08 m/s, 6.3e-08 m/s
+     Temperature min/avg/max:            -3.128e-06 K, 0.0004743 K, 0.002085 K
+     Heat fluxes through boundary parts: 180.9 W, 182 W
+     Writing depth average:              output-passive_comp/depth_average
+
+Termination requested by criterion: end time
+
+
+

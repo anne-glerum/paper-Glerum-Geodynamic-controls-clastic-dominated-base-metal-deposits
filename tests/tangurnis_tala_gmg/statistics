@@ -1,0 +1,17 @@
+# 1: Time step number
+# 2: Time (seconds)
+# 3: Time step size (seconds)
+# 4: Number of mesh cells
+# 5: Number of Stokes degrees of freedom
+# 6: Number of temperature degrees of freedom
+# 7: Number of nonlinear iterations
+# 8: Iterations for Stokes solver
+# 9: Velocity iterations in Stokes preconditioner
+# 10: Schur complement iterations in Stokes preconditioner
+# 11: Visualization file name
+# 12: Average adiabatic heating rate (W/kg)
+# 13: Total adiabatic heating rate (W)
+# 14: Average shear heating rate (W/kg)
+# 15: Total shear heating rate (W)
+0 0.000000000000e+00 0.000000000000e+00 64 659 289 7         18 32 32 output-tangurnis_tala_gmg/solution/solution-00000 -4.04761238e-03 -5.25154449e-03 4.09011877e-03 5.30669409e-03 
+1 1.000000000000e-04 1.000000000000e-04 64 659 289 1 4294967295  0  0 output-tangurnis_tala_gmg/solution/solution-00001 -4.04761238e-03 -5.25154449e-03 4.09011877e-03 5.30669409e-03 

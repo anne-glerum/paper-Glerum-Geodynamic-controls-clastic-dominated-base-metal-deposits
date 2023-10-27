@@ -1,0 +1,20 @@
+
+Loading shared library <./libdoneahuerta_3.so>
+
+Number of active cells: 64 (on 4 levels)
+Number of degrees of freedom: 948 (578+81+289)
+
+*** Timestep 0:  t=0 seconds, dt=0 seconds
+   Skipping temperature solve because RHS is zero.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+23 iterations.
+
+   Postprocessing:
+     Writing graphical output:      output-doneahuerta_3/solution/solution-00000
+     RMS, max velocity:             0.00777 m/s, 0.0119 m/s
+     Errors u_L1, p_L1, u_L2, p_L2: 2.706835e-05, 1.109392e-03, 2.151968e-05, 1.165114e-03
+
+Termination requested by criterion: end time
+
+
+
