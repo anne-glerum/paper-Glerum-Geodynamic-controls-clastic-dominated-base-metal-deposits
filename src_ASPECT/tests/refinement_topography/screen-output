@@ -1,0 +1,45 @@
+
+Loading shared library <./librefinement_topography.so>
+
+Number of active cells: 16 (on 3 levels)
+Number of degrees of freedom: 268 (162+25+81)
+
+*** Timestep 0:  t=0 seconds, dt=0 seconds
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 14+0 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 1
+
+   Solving Stokes system... 0+0 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 2.18763e-08
+
+
+Number of active cells: 22 (on 4 levels)
+Number of degrees of freedom: 392 (238+35+119)
+
+*** Timestep 0:  t=0 seconds, dt=0 seconds
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 22+0 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 1
+
+   Solving Stokes system... 0+0 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 8.07445e-08
+
+
+Number of active cells: 46 (on 5 levels)
+Number of degrees of freedom: 791 (482+68+241)
+
+*** Timestep 0:  t=0 seconds, dt=0 seconds
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 24+0 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 1
+
+   Solving Stokes system... 0+0 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 6.87843e-08
+
+
+   Postprocessing:
+
+Termination requested by criterion: end time
+
+
+

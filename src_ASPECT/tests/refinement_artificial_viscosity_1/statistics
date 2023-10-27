@@ -1,0 +1,26 @@
+# 1: Time step number
+# 2: Time (seconds)
+# 3: Time step size (seconds)
+# 4: Number of mesh cells
+# 5: Number of Stokes degrees of freedom
+# 6: Number of temperature degrees of freedom
+# 7: Number of degrees of freedom for all compositions
+# 8: Iterations for temperature solver
+# 9: Iterations for composition solver 1
+# 10: Iterations for composition solver 2
+# 11: Visualization file name
+# 12: Minimal temperature (K)
+# 13: Average temperature (K)
+# 14: Maximal temperature (K)
+# 15: Average nondimensional temperature (K)
+# 16: Minimal value for composition Alice
+# 17: Maximal value for composition Alice
+# 18: Global mass for composition Alice
+# 19: Minimal value for composition Bob
+# 20: Maximal value for composition Bob
+# 21: Global mass for composition Bob
+0 0.000000000000e+00 0.000000000000e+00 256 2467 1089 2178  0  0  0 output-refinement_artificial_viscosity_1/solution/solution-00000 1.00000000e-01 1.77256944e-01 5.00000000e-01 2.04762641e-05 1.00000000e-01 1.00000000e+00 1.69238281e-01  0.00000000e+00 1.00000000e+02 8.03710938e+01 
+1 2.209708691208e-02 2.209708691208e-02 256 2467 1089 2178 13 10 14 output-refinement_artificial_viscosity_1/solution/solution-00001 8.23165903e-02 1.77257083e-01 5.27688796e-01 2.51631310e-05 6.85571876e-02 1.03924376e+00 1.69278256e-01 -4.20389193e+00 1.01807799e+02 7.92647496e+01 
+2 4.419417382416e-02 2.209708691208e-02 256 2467 1089 2178 16 13 19 output-refinement_artificial_viscosity_1/solution/solution-00002 8.14722786e-02 1.77257370e-01 5.32656174e-01 2.53869841e-05 4.34274296e-02 1.05428399e+00 1.69346396e-01 -4.41469129e+00 1.00579831e+02 7.81421171e+01 
+3 6.629126073624e-02 2.209708691208e-02 298 2953 1305 2610 17 14 22 output-refinement_artificial_viscosity_1/solution/solution-00003 8.66660903e-02 1.77257691e-01 5.21980817e-01 2.40104959e-05 2.77706666e-02 1.05727470e+00 1.69452247e-01 -4.44091238e+00 1.00325324e+02 7.69986987e+01 
+4 8.000000000000e-02 1.370873926376e-02 298 2953 1305 2610 14 11 13 output-refinement_artificial_viscosity_1/solution/solution-00004 8.81733528e-02 1.77257902e-01 5.17316986e-01 2.36110652e-05 2.20857493e-02 1.05339114e+00 1.69537763e-01 -6.03926041e+00 1.00202246e+02 7.62789164e+01 

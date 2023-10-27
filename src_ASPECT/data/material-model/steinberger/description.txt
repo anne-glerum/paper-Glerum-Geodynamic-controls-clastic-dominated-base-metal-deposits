@@ -1,0 +1,20 @@
+
+viscosity = vis_lateral * vis_radial
+
+vis_radial:
+radial-visc.txt (lookup with depth)
+
+vis_lateral:
+temp-viscosity-prefactor.txt (with depth)
+-> value / adiabatic_temperature * (adiabatic_temperature-temperature) / (temperature)
+
+(steinberger/calderwood, modification of Formula (6), we replaced the average_temperature by the adiabatic temperature, since the consequence that the viscosity stays constant although the temperature and the lateral averaged temperature increase does not seem to be reasonable for our models) 
+
+thermal_expansivity: lookup table
+specific heat: lookup table
+density: lookup table
+thermal conductivity: constant
+
+The provided lookup table was constructed with the software PERPLEX (Connolly, 2005) using the thermodynamic database by Stixrude (2011) and assuming a pyrolitic composition (Ringwood 1988).
+
+

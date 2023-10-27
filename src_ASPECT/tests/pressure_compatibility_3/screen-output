@@ -1,0 +1,107 @@
+
+Number of active cells: 64 (on 4 levels)
+Number of degrees of freedom: 948 (578+81+289)
+
+*** Timestep 0:  t=0 seconds, dt=0 seconds
+   Solving temperature system... 0 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 9+0 iterations.
+
+   Postprocessing:
+     RMS, max velocity:                  0.00577 m/s, 0.00987 m/s
+     Pressure min/avg/max:               -0.002306 Pa, 0.4999 Pa, 0.9979 Pa
+     Temperature min/avg/max:            0 K, 0.8632 K, 2 K
+     Mass fluxes through boundary parts: 0 kg/s, 0 kg/s, -0.003585 kg/s, 0 kg/s
+
+*** Timestep 1:  t=6.25 seconds, dt=6.25 seconds
+   Solving temperature system... 12 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 8+0 iterations.
+
+   Postprocessing:
+     RMS, max velocity:                  0.00577 m/s, 0.00987 m/s
+     Pressure min/avg/max:               0.001508 Pa, 0.4999 Pa, 0.9637 Pa
+     Temperature min/avg/max:            0 K, 0.8978 K, 2 K
+     Mass fluxes through boundary parts: 0 kg/s, 0 kg/s, -0.003585 kg/s, 0 kg/s
+
+*** Timestep 2:  t=12.5 seconds, dt=6.25 seconds
+   Solving temperature system... 12 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 7+0 iterations.
+
+   Postprocessing:
+     RMS, max velocity:                  0.00577 m/s, 0.00986 m/s
+     Pressure min/avg/max:               0.00584 Pa, 0.4999 Pa, 0.9324 Pa
+     Temperature min/avg/max:            0 K, 0.9296 K, 2 K
+     Mass fluxes through boundary parts: 0 kg/s, 0 kg/s, -0.003585 kg/s, 0 kg/s
+
+*** Timestep 3:  t=18.75 seconds, dt=6.25 seconds
+   Solving temperature system... 12 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 7+0 iterations.
+
+   Postprocessing:
+     RMS, max velocity:                  0.00577 m/s, 0.00985 m/s
+     Pressure min/avg/max:               0.01088 Pa, 0.4999 Pa, 0.9053 Pa
+     Temperature min/avg/max:            0 K, 0.9592 K, 2 K
+     Mass fluxes through boundary parts: 0 kg/s, 0 kg/s, -0.003585 kg/s, 0 kg/s
+
+*** Timestep 4:  t=25 seconds, dt=6.25 seconds
+   Solving temperature system... 12 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 7+0 iterations.
+
+   Postprocessing:
+     RMS, max velocity:                  0.00577 m/s, 0.00985 m/s
+     Pressure min/avg/max:               0.01652 Pa, 0.4999 Pa, 0.8831 Pa
+     Temperature min/avg/max:            0 K, 0.9861 K, 2 K
+     Mass fluxes through boundary parts: 0 kg/s, 0 kg/s, -0.003585 kg/s, 0 kg/s
+
+*** Timestep 5:  t=31.25 seconds, dt=6.25 seconds
+   Solving temperature system... 12 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 6+0 iterations.
+
+   Postprocessing:
+     RMS, max velocity:                  0.00577 m/s, 0.00986 m/s
+     Pressure min/avg/max:               0.02267 Pa, 0.4999 Pa, 0.8651 Pa
+     Temperature min/avg/max:            0 K, 1.01 K, 2 K
+     Mass fluxes through boundary parts: 0 kg/s, 0 kg/s, -0.003585 kg/s, 0 kg/s
+
+*** Timestep 6:  t=37.5 seconds, dt=6.25 seconds
+   Solving temperature system... 12 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 6+0 iterations.
+
+   Postprocessing:
+     RMS, max velocity:                  0.00577 m/s, 0.00986 m/s
+     Pressure min/avg/max:               0.02918 Pa, 0.4999 Pa, 0.8502 Pa
+     Temperature min/avg/max:            0 K, 1.032 K, 2 K
+     Mass fluxes through boundary parts: 0 kg/s, 0 kg/s, -0.003585 kg/s, 0 kg/s
+
+*** Timestep 7:  t=43.75 seconds, dt=6.25 seconds
+   Solving temperature system... 12 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 6+0 iterations.
+
+   Postprocessing:
+     RMS, max velocity:                  0.00577 m/s, 0.00986 m/s
+     Pressure min/avg/max:               0.03589 Pa, 0.4999 Pa, 0.8375 Pa
+     Temperature min/avg/max:            0 K, 1.052 K, 2 K
+     Mass fluxes through boundary parts: 0 kg/s, 0 kg/s, -0.003585 kg/s, 0 kg/s
+
+*** Timestep 8:  t=50 seconds, dt=6.25 seconds
+   Solving temperature system... 12 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 6+0 iterations.
+
+   Postprocessing:
+     RMS, max velocity:                  0.00577 m/s, 0.00986 m/s
+     Pressure min/avg/max:               0.04266 Pa, 0.4999 Pa, 0.8267 Pa
+     Temperature min/avg/max:            0 K, 1.07 K, 2 K
+     Mass fluxes through boundary parts: 0 kg/s, 0 kg/s, -0.003585 kg/s, 0 kg/s
+
+Termination requested by criterion: end time
+
+
+

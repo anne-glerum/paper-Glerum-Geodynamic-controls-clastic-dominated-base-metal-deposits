@@ -1,0 +1,229 @@
+
+Number of active cells: 16 (on 3 levels)
+Number of degrees of freedom: 493 (162+25+144+81+81)
+
+*** Timestep 0:  t=0 seconds, dt=0 seconds
+   Solving temperature system... 0 iterations.
+   Solving C_1 system ... 0 iterations.
+   Solving C_2 system ... 0 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 16+0 iterations.
+
+Number of active cells: 40 (on 4 levels)
+Number of degrees of freedom: 1,187 (386+55+360+193+193)
+
+*** Timestep 0:  t=0 seconds, dt=0 seconds
+   Solving temperature system... 0 iterations.
+   Solving C_1 system ... 0 iterations.
+   Solving C_2 system ... 0 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 16+0 iterations.
+
+   Postprocessing:
+     Temperature min/avg/max:   0 K, 0.5 K, 1 K
+     Compositions min/max/mass: 0/1/0.4167 // 0/1/0.4583
+
+*** Timestep 1:  t=0.0625 seconds, dt=0.0625 seconds
+   Solving temperature system... 3 iterations.
+   Solving C_1 system ... 9 iterations.
+   Solving C_2 system ... 10 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 9+0 iterations.
+
+   Postprocessing:
+     Temperature min/avg/max:   -0.0001788 K, 0.5 K, 1 K
+     Compositions min/max/mass: -0.005362/1.06/0.4167 // -0.0158/1.028/0.4583
+
+*** Timestep 2:  t=0.125 seconds, dt=0.0625 seconds
+   Solving temperature system... 3 iterations.
+   Solving C_1 system ... 12 iterations.
+   Solving C_2 system ... 10 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 16+0 iterations.
+
+   Postprocessing:
+     Temperature min/avg/max:   -0.0005362 K, 0.5 K, 1 K
+     Compositions min/max/mass: -0.007198/1.102/0.4167 // -0.02143/1.03/0.4583
+
+Number of active cells: 64 (on 4 levels)
+Number of degrees of freedom: 1,813 (578+81+576+289+289)
+
+*** Timestep 3:  t=0.1875 seconds, dt=0.0625 seconds
+   Solving temperature system... 3 iterations.
+   Solving C_1 system ... 13 iterations.
+   Solving C_2 system ... 12 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 17+0 iterations.
+
+   Postprocessing:
+     Temperature min/avg/max:   -0.001164 K, 0.5 K, 1 K
+     Compositions min/max/mass: -0.02092/1.11/0.4167 // -0.01355/1.028/0.4582
+
+*** Timestep 4:  t=0.25 seconds, dt=0.0625 seconds
+   Solving temperature system... 3 iterations.
+   Solving C_1 system ... 12 iterations.
+   Solving C_2 system ... 11 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 17+0 iterations.
+
+   Postprocessing:
+     Temperature min/avg/max:   -0.002034 K, 0.5 K, 1 K
+     Compositions min/max/mass: -0.02054/1.11/0.4167 // -0.004788/1.019/0.4583
+
+Number of active cells: 64 (on 4 levels)
+Number of degrees of freedom: 1,813 (578+81+576+289+289)
+
+*** Timestep 5:  t=0.3125 seconds, dt=0.0625 seconds
+   Solving temperature system... 3 iterations.
+   Solving C_1 system ... 12 iterations.
+   Solving C_2 system ... 12 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 17+0 iterations.
+
+   Postprocessing:
+     Temperature min/avg/max:   -0.002749 K, 0.5 K, 1 K
+     Compositions min/max/mass: -0.01946/1.108/0.4167 // -0.004272/1.021/0.4582
+
+*** Timestep 6:  t=0.375 seconds, dt=0.0625 seconds
+   Solving temperature system... 4 iterations.
+   Solving C_1 system ... 12 iterations.
+   Solving C_2 system ... 11 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 16+0 iterations.
+
+   Postprocessing:
+     Temperature min/avg/max:   -0.001959 K, 0.5 K, 1 K
+     Compositions min/max/mass: -0.01831/1.106/0.4167 // -0.006268/1.014/0.4581
+
+Number of active cells: 64 (on 4 levels)
+Number of degrees of freedom: 1,813 (578+81+576+289+289)
+
+*** Timestep 7:  t=0.4375 seconds, dt=0.0625 seconds
+   Solving temperature system... 3 iterations.
+   Solving C_1 system ... 12 iterations.
+   Solving C_2 system ... 11 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 17+0 iterations.
+
+   Postprocessing:
+     Temperature min/avg/max:   -0.003089 K, 0.5 K, 1 K
+     Compositions min/max/mass: -0.01712/1.104/0.4167 // -0.009569/1.009/0.4581
+
+*** Timestep 8:  t=0.5 seconds, dt=0.0625 seconds
+   Solving temperature system... 4 iterations.
+   Solving C_1 system ... 12 iterations.
+   Solving C_2 system ... 12 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 17+0 iterations.
+
+   Postprocessing:
+     Temperature min/avg/max:   -0.005091 K, 0.5 K, 1 K
+     Compositions min/max/mass: -0.01676/1.1/0.4167 // -0.007125/1.013/0.4581
+
+Number of active cells: 64 (on 4 levels)
+Number of degrees of freedom: 1,813 (578+81+576+289+289)
+
+*** Timestep 9:  t=0.5625 seconds, dt=0.0625 seconds
+   Solving temperature system... 4 iterations.
+   Solving C_1 system ... 12 iterations.
+   Solving C_2 system ... 11 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 16+0 iterations.
+
+   Postprocessing:
+     Temperature min/avg/max:   -0.00561 K, 0.5 K, 1 K
+     Compositions min/max/mass: -0.0166/1.096/0.4167 // -0.003882/1.012/0.458
+
+*** Timestep 10:  t=0.625 seconds, dt=0.0625 seconds
+   Solving temperature system... 4 iterations.
+   Solving C_1 system ... 11 iterations.
+   Solving C_2 system ... 11 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 16+0 iterations.
+
+   Postprocessing:
+     Temperature min/avg/max:   -0.006984 K, 0.5 K, 1 K
+     Compositions min/max/mass: -0.01631/1.093/0.4167 // -0.004574/1.01/0.458
+
+Number of active cells: 64 (on 4 levels)
+Number of degrees of freedom: 1,813 (578+81+576+289+289)
+
+*** Timestep 11:  t=0.6875 seconds, dt=0.0625 seconds
+   Solving temperature system... 4 iterations.
+   Solving C_1 system ... 11 iterations.
+   Solving C_2 system ... 11 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 17+0 iterations.
+
+   Postprocessing:
+     Temperature min/avg/max:   -0.006581 K, 0.5 K, 1 K
+     Compositions min/max/mass: -0.01605/1.091/0.4167 // -0.00472/1.01/0.4581
+
+*** Timestep 12:  t=0.75 seconds, dt=0.0625 seconds
+   Solving temperature system... 4 iterations.
+   Solving C_1 system ... 12 iterations.
+   Solving C_2 system ... 12 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 17+0 iterations.
+
+   Postprocessing:
+     Temperature min/avg/max:   -0.007153 K, 0.5 K, 1 K
+     Compositions min/max/mass: -0.01569/1.088/0.4167 // -0.00434/1.012/0.4581
+
+Number of active cells: 64 (on 4 levels)
+Number of degrees of freedom: 1,813 (578+81+576+289+289)
+
+*** Timestep 13:  t=0.8125 seconds, dt=0.0625 seconds
+   Solving temperature system... 4 iterations.
+   Solving C_1 system ... 11 iterations.
+   Solving C_2 system ... 11 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 7+0 iterations.
+
+   Postprocessing:
+     Temperature min/avg/max:   -0.006973 K, 0.5 K, 1 K
+     Compositions min/max/mass: -0.01539/1.086/0.4167 // -0.0038/1.01/0.4581
+
+*** Timestep 14:  t=0.875 seconds, dt=0.0625 seconds
+   Solving temperature system... 4 iterations.
+   Solving C_1 system ... 11 iterations.
+   Solving C_2 system ... 11 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 7+0 iterations.
+
+   Postprocessing:
+     Temperature min/avg/max:   -0.0074 K, 0.5 K, 1 K
+     Compositions min/max/mass: -0.01521/1.085/0.4167 // -0.003175/1.007/0.4581
+
+Number of active cells: 64 (on 4 levels)
+Number of degrees of freedom: 1,813 (578+81+576+289+289)
+
+*** Timestep 15:  t=0.9375 seconds, dt=0.0625 seconds
+   Solving temperature system... 3 iterations.
+   Solving C_1 system ... 11 iterations.
+   Solving C_2 system ... 11 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 7+0 iterations.
+
+   Postprocessing:
+     Temperature min/avg/max:   -0.006888 K, 0.5 K, 1 K
+     Compositions min/max/mass: -0.01508/1.085/0.4167 // -0.002995/1.006/0.4581
+
+*** Timestep 16:  t=1 seconds, dt=0.0625 seconds
+   Solving temperature system... 3 iterations.
+   Solving C_1 system ... 11 iterations.
+   Solving C_2 system ... 11 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 7+0 iterations.
+
+   Postprocessing:
+     Temperature min/avg/max:   -0.007179 K, 0.5 K, 1 K
+     Compositions min/max/mass: -0.01536/1.085/0.4167 // -0.003116/1.006/0.4581
+
+Number of active cells: 64 (on 4 levels)
+Number of degrees of freedom: 1,813 (578+81+576+289+289)
+
+Termination requested by criterion: end time
+
+
+

@@ -1,0 +1,23 @@
+
+Loading shared library <./libviz_plugin_dependency.so>
+
+Number of active cells: 16 (on 3 levels)
+Number of degrees of freedom: 268 (162+25+81)
+
+*** Timestep 0:  t=0 seconds, dt=0 seconds
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 14+0 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 1
+
+   Solving Stokes system... 0+0 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 2.18763e-08
+
+
+   Postprocessing:
+     RMS, max velocity:        0.00125 m/s, 0.00345 m/s
+     Writing graphical output: output-viz_plugin_dependency/solution/solution-00000
+
+Termination requested by criterion: end time
+
+
+

@@ -1,0 +1,44 @@
+
+Loading shared library <./libmaterial_model_dependencies_steinberger.so>
+
+Number of active cells: 48 (on 3 levels)
+Number of degrees of freedom: 740 (450+65+225)
+
+*** Timestep 0:  t=0 seconds, dt=0 seconds
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 17+0 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 1
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 11+0 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 1.77869
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 8+0 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.0294974
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 7+0 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 0.00180303
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 3+0 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 5: 4.648e-05
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 3+0 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 6: 2.8245e-06
+
+
+   Postprocessing:
+viscosity depends on temperature
+density depends on pressure temperature composition
+compressibility depends on pressure temperature composition
+specific_heat depends on pressure temperature composition
+thermal_conductivity depends on
+model is compressible
+
+Termination requested by criterion: end time
+
+
+

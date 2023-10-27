@@ -1,0 +1,25 @@
+# 1: Time step number
+# 2: Time (years)
+# 3: Time step size (years)
+# 4: Number of mesh cells
+# 5: Number of Stokes degrees of freedom
+# 6: Number of temperature degrees of freedom
+# 7: Number of degrees of freedom for all compositions
+# 8: Number of nonlinear iterations
+# 9: Iterations for temperature solver
+# 10: Iterations for composition solver 1
+# 11: Iterations for Stokes solver
+# 12: Velocity iterations in Stokes preconditioner
+# 13: Schur complement iterations in Stokes preconditioner
+# 14: Visualization file name
+# 15: Minimal value for composition porosity
+# 16: Maximal value for composition porosity
+# 17: Global mass for composition porosity
+# 18: RMS velocity (m/year)
+# 19: Max. velocity (m/year)
+# 20: Outward mass flux through boundary with indicator 0 ("left") (kg/yr)
+# 21: Outward mass flux through boundary with indicator 1 ("right") (kg/yr)
+# 22: Outward mass flux through boundary with indicator 2 ("bottom") (kg/yr)
+# 23: Outward mass flux through boundary with indicator 3 ("top") (kg/yr)
+0 0.000000000000e+00 0.000000000000e+00 8192 74691 33153 33153 2  0  0          6 51 9 output-velocity_divergence/solution/solution-00000  7.47002101e-89 1.00000000e-05 2.51327412e+02 5.38691480e-01 9.97555728e-01 -5.25000000e+07 5.25000000e+07 0.00000000e+00 0.00000000e+00 
+1 2.500000000000e+02 2.500000000000e+02 8192 74691 33153 33153 2 16 14 4294967294  0 0 output-velocity_divergence/solution/solution-00001 -5.96237093e-04 6.02495242e-04 2.48418370e+02 5.38691480e-01 9.97555728e-01 -5.25000000e+07 5.25000000e+07 0.00000000e+00 0.00000000e+00 

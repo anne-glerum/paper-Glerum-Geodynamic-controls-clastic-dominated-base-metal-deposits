@@ -1,0 +1,20 @@
+
+Loading shared library <./libsol_cx_particles.so>
+
+Number of active cells: 4 (on 2 levels)
+Number of degrees of freedom: 159 (50+12+25+36+36)
+
+*** Timestep 0:  t=0 years, dt=0 years
+   Skipping temperature solve because RHS is zero.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 14+0 iterations.
+
+   Postprocessing:
+     Writing particle output:       output-sol_cx_particles/particles/particles-00000
+     Writing graphical output:      output-sol_cx_particles/solution/solution-00000
+     Errors u_L1, p_L1, u_L2, p_L2: 9.867543e-04, 3.742617e-02, 1.259712e-03, 4.449791e-02
+
+Termination requested by criterion: end time
+
+
+

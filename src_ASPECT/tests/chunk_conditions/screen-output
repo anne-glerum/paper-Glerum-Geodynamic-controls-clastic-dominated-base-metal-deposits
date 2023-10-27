@@ -1,0 +1,33 @@
+
+Number of active cells: 256 (on 5 levels)
+Number of degrees of freedom: 3,556 (2,178+289+1,089)
+
+*** Timestep 0:  t=0 years, dt=0 years
+   Solving temperature system... 0 iterations.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 64+0 iterations.
+
+   Postprocessing:
+
+     Model domain depth (m):                        3e+06
+     Temperature contrast across model domain (K):  1527
+     Reference depth (m):                           0
+     Reference temperature (K):                     1600
+     Reference pressure (Pa):                       0
+     Reference gravity (m/s^2):                     10
+     Reference density (kg/m^3):                    3209.04
+     Reference thermal expansion coefficient (1/K): 3e-05
+     Reference specific heat capacity (J/(K*kg)):   1200
+     Reference thermal conductivity (W/(m*K)):      4.7
+     Reference viscosity (Pa*s):                    1e+21
+     Reference thermal diffusivity (m^2/s):         1.22051e-06
+     Rayleigh number:                               3.25205e+07
+
+     RMS, max velocity:                  195 m/year, 484 m/year
+     Temperature min/avg/max:            273 K, 1610 K, 1800 K
+     Heat fluxes through boundary parts: -4.224e+07 W, -2.023e+09 W, 2.458e+09 W, 2.458e+09 W
+
+Termination requested by criterion: end time
+
+
+

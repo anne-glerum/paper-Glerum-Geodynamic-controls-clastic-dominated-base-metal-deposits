@@ -1,0 +1,55 @@
+
+Number of active cells: 256 (on 4 levels)
+Number of degrees of freedom: 2,804 (2,210+297+297)
+
+*** Timestep 0:  t=0 seconds, dt=0 seconds
+   Skipping temperature solve because RHS is zero.
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+13 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 1: 1
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+17 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 2: 0.106461
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+13 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 3: 0.0253554
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+9 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 4: 0.0112019
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+6 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 5: 0.00962879
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+6 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 6: 0.0086542
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+5 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 7: 0.00793357
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+5 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 8: 0.0073901
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+5 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 9: 0.0069032
+
+   Rebuilding Stokes preconditioner...
+   Solving Stokes system... 0+5 iterations.
+      Relative nonlinear residual (Stokes system) after nonlinear iteration 10: 0.00651208
+
+
+   Postprocessing:
+     RMS, max velocity:                  1.8e-11 m/s, 2e-11 m/s
+     Mass fluxes through boundary parts: -0.00054 kg/s, -0.00054 kg/s, 0 kg/s, 0.00108 kg/s
+
+Termination requested by criterion: end time
+
+
+
