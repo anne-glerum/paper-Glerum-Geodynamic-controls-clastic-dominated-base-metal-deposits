@@ -48,7 +48,10 @@ Naming conventions:
 5o - wide rift simulations
 
 ## ASPECT output files
-The folder belonging to each simulation also includes ASPECT output files log.txt and statistics. The statistics files have been used to plot source and host rock area and potential endowment over time.
+The folder belonging to each simulation also includes ASPECT output files log.txt and statistics. The statistics files have been used to plot source and host rock area and potential endowment over time with the scripts provided in the /postprocessing_scripts folder. Raw vtu files are also included for those simulations of which snapshots are shown in the paper in the subfolder /solution.
+
+## FastScape output files
+Raw vtu files are included for those simulations of which snapshots are shown in the paper in the subfolder /VTK.
 
 ## FastScape installation details
 The FastScape version in this repository can by installed by:
@@ -70,5 +73,5 @@ The ASPECT version in this repository can be installed by (assuming deal.II is i
 3. make
 
 ## Postprocessing
-Images of model results were created with ParaView 5.7.0 python scripts and statefiles in the folder /postprocessing_scripts (sedtype_fav_ore_form_8.py files and pvsm state files).
+Images of model results were created with the ParaView 5.7.0 python scripts and statefiles in the folder /postprocessing_scripts (sedtype_fav_ore_form_8.py files and pvsm state files).
 Plots of source and host rock area and endowment over time were created with python 3.9.17 scripts that can also be found in the /postprocessing_scripts folder.
