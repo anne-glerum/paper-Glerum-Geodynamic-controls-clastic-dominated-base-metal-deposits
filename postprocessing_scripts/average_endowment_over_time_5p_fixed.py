@@ -51,7 +51,7 @@ density = 2410 # kg/m3, sediment
 F = 0.65
 C_Zn = 100 # ppm
 C_Pb = 23 # ppm
-width = 20000 # m
+width = 10000 # m (value decreased from 20 km to 10 km in revision)
 
 # File name
 tail = r"/statistics"
@@ -111,7 +111,7 @@ plt.grid(axis='y',color='0.95')
 
 # Ranges of the axes
 plt.xlim(-0.25,25.25) # My
-plt.ylim(-0.75,75.75) # Mt
+plt.ylim(-0.40,40.40) # Mt
 
 ax = plt.gca()
 ax.get_yaxis().get_major_formatter().set_useOffset(False)
@@ -121,7 +121,7 @@ ax.yaxis.set_label_position('right')
 
 # Axes ticks
 plt.xticks(np.arange(0,30,5))
-plt.yticks([0,25,50,75])
+plt.yticks([0,10,20,30,40])
 
 plt.tight_layout()
 fig.tight_layout()
